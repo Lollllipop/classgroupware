@@ -9,4 +9,32 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>POOL_CONFIG</param-name>
+    <param-value>
+		jdbcDriver=oracle.jdbc.driver.OracleDriver
+		jdbcUrl=jdbc:oracle:thin:@localhost:1521:xe
+		dbUser=scott
+		dbPass=tiger
+		validationQuery=select 1
+		minIdle=5
+		maxTotal=50
+		dbcpDriver=org.apache.commons.dbcp2.PoolingDriver
+		dbcpUrl=jdbc:apache:commons:dbcp:
+		poolName=oracleDBCP
+	</param-value>
+  </context-param>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>com.ja.classgroupware.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>ENCODING_TYPE</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
 </web-app>
