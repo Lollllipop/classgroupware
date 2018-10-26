@@ -211,12 +211,12 @@
 			if($(this).hasClass('closed')){
 				$('.navbar-side').animate({left: '0px'});
 				$(this).removeClass('closed');
-				$('#page-wrapper').animate({'margin-left' : '260px'});
+				$('#page-wrapper').animate({'margin-left' : '180px'});
 				
 			}
 			else{
 			    $(this).addClass('closed');
-				$('.navbar-side').animate({left: '-260px'});
+				$('.navbar-side').animate({left: '-180px'});
 				$('#page-wrapper').animate({'margin-left' : '0px'}); 
 			}
 		});
