@@ -3,11 +3,7 @@
   <display-name>Class_Groupware</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
     <param-name>POOL_CONFIG</param-name>
@@ -24,6 +20,9 @@
 		poolName=oracleDBCP
 	</param-value>
   </context-param>
+  <listener>
+    <listener-class>com.ja.classgroupware.listener.DBCPInitListener</listener-class>
+  </listener>
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>com.ja.classgroupware.filter.CharacterEncodingFilter</filter-class>
@@ -37,4 +36,23 @@
     <url-pattern>*.do</url-pattern>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
+  <servlet>
+    <servlet-name>ControllerUsingURI</servlet-name>
+    <servlet-class>com.ja.classgroupware.controller.ControllerUsingURI</servlet-class>
+    <init-param>
+      <param-name>configFile</param-name>
+      <param-value>
+        	/WEB-INF/commandHandlerURI.properties
+      </param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControllerUsingURI</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/view/error/error.jsp</location>
+  </error-page>
 </web-app>

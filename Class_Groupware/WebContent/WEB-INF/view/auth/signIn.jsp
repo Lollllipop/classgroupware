@@ -9,8 +9,10 @@
 <%@ include file="/WEB-INF/view/include/header.jsp" %>
 <%@ include file="/WEB-INF/view/include/aside.jsp" %>
 
+<div id="page-wrapper">
 
 <%-- 여기에 코드 작성!! --%>
 
-
+</div>
+ 
 <%@ include file="/WEB-INF/view/include/footer.jsp" %>
