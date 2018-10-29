@@ -20,6 +20,3 @@
 <script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
 <!-- Custom Js -->
 <script src="${contextPath}/assets/js/custom-scripts.js"></script>
-
-</body>
-</html>
