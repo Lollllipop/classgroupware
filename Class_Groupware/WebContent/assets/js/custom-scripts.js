@@ -221,6 +221,8 @@
 			}
 		});
 		
+		$('#page-wrapper').css('height', $(window).height() - $('.navbar').height());
+		
         mainApp.initFunction(); 
     });
 

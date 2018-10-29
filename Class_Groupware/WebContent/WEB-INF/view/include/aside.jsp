@@ -1,33 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <nav class="navbar-default navbar-side" role="navigation">
 	<div class="sidebar-collapse">
 		<ul class="nav" id="main-menu">
 		    <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i>Å¬·¡½º</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i>í´ëž˜ìŠ¤</a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i>Ãâ°á</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i>ì¶œê²°</a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-desktop"></i>ÀÏÁ¤</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-desktop"></i>ì¼ì •</a>
             </li>
       		<li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i>¼ºÀû</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i>ì„±ì </a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i>°úÁ¦</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i>ê³¼ì œ</a>
             </li>
             
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-table"></i>ÀÚÀ¯°Ô½ÃÆÇ</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-table"></i>ìžìœ ê²Œì‹œíŒ</a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-edit"></i>ÀÚ·á½Ç</a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-edit"></i>ìžë£Œì‹¤</a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i>¼ö°­ÇÐ»ý¸ñ·Ï<span class="fa arrow"></span></a>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i>ìˆ˜ê°•í•™ìƒëª©ë¡<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="#">Second Level Link</a>
@@ -56,4 +55,3 @@
         </ul>
     </div>
 </nav>
-<div id="page-wrapper">

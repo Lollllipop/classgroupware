@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
@@ -11,6 +11,9 @@
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class Groupware</title>
+    
+	<%-- ���⿡ css�� ��ũ �ۼ�!! --%>
+	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="${contextPath}/assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -23,35 +26,16 @@
     <link href="${contextPath}/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css" rel="stylesheet" >
-    
-    <%-- 여기에 css등 링크 작성!! --%>
-     
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
 <body>
-	<div id="wrapper">
-		<%@ include file="/WEB-INF/view/include/header.jsp" %>
-		<%@ include file="/WEB-INF/view/include/aside.jsp" %>
+<%@ include file="/WEB-INF/view/include/header.jsp" %>
+<%@ include file="/WEB-INF/view/include/aside.jsp" %>
 
-		<div id="page-wrapper">
-			<div id="page-inner">
-			
-			
-				<%-- 여기에 코드 작성!! --%>
-				
-				
-				<%@ include file="/WEB-INF/view/include/footer.jsp" %>
-			</div>
-		</div>
-	</div>
-	<!-- jQuery Js -->
-	<script src="${contextPath}/assets/js/jquery-1.10.2.js"></script>
-	<!-- Bootstrap Js -->
-	<script src="${contextPath}/assets/js/bootstrap.min.js"></script>
-	<script src="${contextPath}/assets/materialize/js/materialize.min.js"></script>
-	<!-- Metis Menu Js -->
-	<script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
-	<!-- Custom Js -->
-	<script src="${contextPath}/assets/js/custom-scripts.js"></script>  
+
+
+
+
+<%@ include file="/WEB-INF/view/include/footer.jsp" %>
 </body>
 </html>

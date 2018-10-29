@@ -19,14 +19,12 @@ body {
 
 #page-wrapper {
     padding: 15px 15px;
-    min-height: 600px;
     background: #ececec;
 }
 #page-inner {
     width:100%;
     margin:10px 20px 10px 0px;
     padding: 15px 30px;
-    min-height:1200px;
 }
 .header .container-fluid{
 padding:0;
@@ -86,7 +84,7 @@ border-radius:0px;
 }
 #page-wrapper {
   position: relative;
-  top: 55px;
+  top: 60px;
   /* box-shadow: 0 0 10px #757575; */
   -moz-box-shadow: 0 0 10px #757575;
   /* -webkit-box-shadow: 0 0 10px #757575; */
@@ -570,8 +568,7 @@ line-height: 1.428571429;
  @media(min-width:768px) {
      #page-wrapper{
                margin: 0 0 0 180px;
-               padding: 0;
-               min-height: 1200px;
+               padding: 15px 15px;
     }
 	
 	
@@ -711,7 +708,7 @@ padding: 0 15px 0px 15px;
 	.navbar-side {
 		z-index: 2;
 		position: fixed;
-		width: 260px;
+		width: 180px;
 		top: 69px;
 		box-shadow: none;
 	}
