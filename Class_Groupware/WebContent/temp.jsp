@@ -30,10 +30,13 @@
 </head>
 <body>
 	<div id="wrapper">
-		<%@ include file="/WEB-INF/view/include/header.jsp" %>
-		<%@ include file="/WEB-INF/view/include/aside.jsp" %>
+		<%@ include file="/WEB-INF/view/include/nav_top.jsp" %>
+		<%@ include file="/WEB-INF/view/include/nav_side.jsp" %>
 
 		<div id="page-wrapper">
+			<div class="header">
+				<h1 class="page-header">여기에 제목을 쓰시오</h1>
+			</div>
 			<div id="page-inner">
 			
 			
@@ -52,6 +55,6 @@
 	<!-- Metis Menu Js -->
 	<script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
 	<!-- Custom Js -->
-	<script src="${contextPath}/assets/js/custom-scripts.js"></script>  
+	<script src="${contextPath}/assets/js/custom-scripts.js"></script>
 </body>
 </html>

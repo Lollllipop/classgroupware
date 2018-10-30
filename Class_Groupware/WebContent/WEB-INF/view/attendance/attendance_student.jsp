@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
@@ -11,9 +11,6 @@
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class Groupware</title>
-    
-	<%-- ¿©±â¿¡ cssµî ¸µÅ© ÀÛ¼º!! --%>
-	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="${contextPath}/assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -26,16 +23,38 @@
     <link href="${contextPath}/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css" rel="stylesheet" >
+    
+    <%-- ì—¬ê¸°ì— cssë“± ë§í¬ ìž‘ì„±!! --%>
+     
 </head>
 <body>
-<%@ include file="/WEB-INF/view/include/header.jsp" %>
-<%@ include file="/WEB-INF/view/include/aside.jsp" %>
+	<div id="wrapper">
+		<%@ include file="/WEB-INF/view/include/nav_top.jsp" %>
+		<%@ include file="/WEB-INF/view/include/nav_side.jsp" %>
 
-
-<%-- ¿©±â¿¡ ÄÚµå ÀÛ¼º!! --%>
-
-
-<%@ include file="/WEB-INF/view/include/footer.jsp" %>
+		<div id="page-wrapper">
+			<div class="header">
+				<h1 class="page-header">temp</h1>
+			</div>
+			<div id="page-inner">
+			
+			
+				<%-- ì—¬ê¸°ì— ì½”ë“œ ìž‘ì„±!! --%>
+				
+				
+				<%@ include file="/WEB-INF/view/include/footer.jsp" %>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery Js -->
+	<script src="${contextPath}/assets/js/jquery-1.10.2.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="${contextPath}/assets/js/bootstrap.min.js"></script>
+	<script src="${contextPath}/assets/materialize/js/materialize.min.js"></script>
+	<!-- Metis Menu Js -->
+	<script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
+	<!-- Custom Js -->
+	<script src="${contextPath}/assets/js/custom-scripts.js"></script>
 </body>
 </html>

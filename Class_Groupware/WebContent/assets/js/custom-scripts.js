@@ -221,7 +221,7 @@
 			}
 		});
 		
-		$('#page-wrapper').css('height', $(window).height() - $('.navbar').height());
+		$('#page-wrapper').css('min-height', $(window).height() - $('.navbar').height());
 		
         mainApp.initFunction(); 
     });

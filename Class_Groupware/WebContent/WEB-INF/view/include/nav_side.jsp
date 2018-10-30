@@ -26,31 +26,7 @@
                 <a href="#" class="waves-effect waves-dark"><i class="fa fa-edit"></i>자료실</a>
             </li>
             <li>
-                <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i>수강학생목록<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
-
-                        </ul>
-
-                    </li>
-                </ul>
+                <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i>수강학생목록</a>
             </li>
         </ul>
     </div>
