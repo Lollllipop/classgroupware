@@ -1,0 +1,58 @@
+.clear {
+            clear: both;
+        }
+
+        .cntAllTextArea {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .selectReadCountArea {
+            float: left;
+        }
+
+        .selectReadCountSelect {
+            float: left;
+        }
+
+        .selectReadCountText {
+            margin-top: 10px;
+            float: left;
+        }
+
+        .writebtnArea {
+            float: right;
+        }
+
+        .writebtnArea>button {
+            background-color: #F44336;
+        }
+
+        .pagination {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .selectSearchValue {
+            margin-top: 10px;
+            float: left;
+        }
+
+        .search_icon {
+            margin-top: 10px;
+            float: right;
+        }
+
+        .search_area_form_input {
+            float: right;
+        }
+
+        .searcharea {
+            margin-top: 30px;
+            margin-right: 30px;
+            float: right;
+        }
+
+        .card-action {
+            float: left;
+        }

@@ -25,17 +25,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css" rel="stylesheet" >
     
-        <style>
-    .clear {
-        clear : both;
-    }
-    #message {
-        text-align: right;
-    }
-
-    li { list-style: none; }
-    </style>
-    
+    <%-- 여기에 css등 링크 작성!! --%>
      
 </head>
 <body>
@@ -50,101 +40,7 @@
          <div id="page-inner">
          
          
-            <div class="row">
-
-                <div class="col-md-12">
-                     <div class="card">
-      <div class="card-content">
-         <div class="alert alert-light">
-
-             
-             
-             <div class="clear"></div>
-             <div id = "alldelete">
-            
-                        <input type = "text"  name="search" style="width : 100px" placeholder="검색" aria-label="검색">
-                        <button><i class="material-icons dp48">search</i></button>
-           
-
-                    <button type="button" class="btn btn-danger btn-sm" style="float : right;">전체 삭제</button>
-                </div>
-
-
-                <div class="clear"></div>
-
-                <br>
-
-            <li>
-				<div id = messagebox>
-					<strong>John Doe</strong> <span class="pull-right text-muted">
-						<em>Today</em>
-					</span>
-					<p>
-						Lorem Ipsum has been the industry's standard dummy text ever since
-						the 1500s...
-                        <div id = message>
-						<button type="button" class="btn btn-primary btn-xs" onclick="window.open('Message_write.jsp','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
-                            <button type="button" class="btn btn-primary btn-xs">확인하기</button>
-                            <button type="button" class="btn btn-danger btn-xs">삭제하기</button>
-                            <div id = message>
-					</p>
-				</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<div id = messagebox>
-					<strong>John Smith</strong> <span class="pull-right text-muted">
-						<em>Yesterday</em>
-                    </span>
-                    <p>
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-						an kwilnw...
-                                <div id = message>
-						<button type="button" class="btn btn-primary btn-xs" onclick="window.open('Message_write.jsp','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
-                            <button type="button" class="btn btn-primary btn-xs">확인하기</button>
-                            <button type="button" class="btn btn-danger btn-xs">삭제하기</button>
-                                </div>
-					    </p>
-                </div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-					<div id = messagebox>
-						<strong>John Smith</strong> <span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-						<p>
-							Lorem Ipsum has been the industry's standard dummy text ever
-							since the...
-                            <div id = message>
-							<button type="button" class="btn btn-primary btn-xs" onclick="window.open('Message_write.jsp','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
-                                <button type="button" class="btn btn-primary btn-xs">확인하기</button>
-                                <button type="button" class="btn btn-danger btn-xs">삭제하기</button>
-                                </div>
-                            </p>
-                      
-					</div>
-			</li>
-
-      </div>
-			
-
-			<div class="clearBoth"></div>
-		</div>
-             
- 
-   
-  <!-- Disabled Switch -->
- 
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div> 
-                    <div class="clear"></div>
-                <!-- /.col-lg-12 --> 
-			</div>
+            <%-- 여기에 코드 작성!! --%>
             
             
             <%@ include file="/WEB-INF/view/include/footer.jsp" %>
