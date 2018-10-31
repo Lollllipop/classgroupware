@@ -25,8 +25,9 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css" rel="stylesheet" >
     
-    <link href="${contextPath }/assets/reference_board/css/reference_board_list.css" rel="stylesheet"/>
-     
+    <link href="${contextPath }/assets/open_board/css/open_board_list.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
 </head>
 <body>
 	<div id="wrapper">
@@ -37,7 +38,7 @@
 			<div class="header">
 				<h1 class="page-header">자료실</h1>
 			</div>
-			<div id="page-inner">
+			 <div id="page-inner">
 
                 <div class="row">
                     <div class="col-md-12">
@@ -90,6 +91,26 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody>
+                                        <tbody>
+
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>안녕 2번글이야 첨부파일 확인해줘<i class="fas fa-file-invoice"></i></td>
+                                                    <td>김기태</td>
+                                                    <td>2018.10.26</td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </tbody>
+                                            <tbody>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>안녕 3번글이야 첨부파일 및 댓글 확인해줘<i class="fas fa-file-invoice"></i><b>(5)</b></td>
+                                                        <td>이시우</td>
+                                                        <td>2018.10.26</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                </tbody>
                                     </table>
 
                                     <div class="selectReadCountArea">
@@ -136,7 +157,6 @@
                             </div>
                         </div>
 
-			
 				
 				
 				<%@ include file="/WEB-INF/view/include/footer.jsp" %>

@@ -1,0 +1,24 @@
+ .container {
+      float: left;
+    }
+
+    .btn {
+      color: #F44336;
+    }
+
+    .marg-top100 {
+      margin-top: 50px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    footer>strong {
+      color: #F44336;
+      font-size: 18px;
+    }
+
+    .col-md-4>p>strong {
+      color: #F44336;
+    }
