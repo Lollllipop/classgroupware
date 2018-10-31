@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<title>Welcome to ChoongAng!</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,20 +43,6 @@
 	rel='stylesheet' type='text/css' />
 <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css"
 	rel="stylesheet">
-
-
-<script>
-  function showPopup() { 
-	window.open("check_id_popup.jsp", "a", "width=400, height=150, left=200, top=200"); 
-  }
-</script>
-
-<title>Welcome to ChoongAng!</title>
-
-
-
-</head>
-
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -94,6 +80,8 @@ body {
 	background-color : white;
 }
 </style>
+
+</head>
 <body>
 
 
@@ -106,12 +94,7 @@ body {
 					class="img-responsive center-block">
 				<p>Choong Ang</p>
 			</div>
-
-
 		</div>
-
-
-
 
 	</div>
 
