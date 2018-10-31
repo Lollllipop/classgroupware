@@ -53,8 +53,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="text-align:center">작성자</td>
-                                                <input type="hidden" name="아이디" value="">
+                                                <td style="width: 20px; vertical-align: middle;">작성자</td>
+                                                <input type="hidden" name="아이디" value="" style="width: 20px; vertical-align: middle;">
                                                 <td>아이디</td>
                                             </tr>
                                         </thead>
