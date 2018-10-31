@@ -1,12 +1,155 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="contextPath" value="<%=request.getContextPath()%>"></c:set>
+
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Class Groupware</title>
+<style>
+.clear {
+	clear: both;
+}
+
+#message {
+	text-align: right;
+}
+
+li {
+	list-style: none;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="${contextPath}/assets/materialize/css/materialize.min.css"
+	media="screen,projection" />
+<!-- Bootstrap Styles-->
+<link href="${contextPath}/assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FontAwesome Styles-->
+<link href="${contextPath}/assets/css/font-awesome.css" rel="stylesheet" />
+<!-- Morris Chart Styles-->
+<link href="${contextPath}/assets/js/morris/morris-0.4.3.min.css"
+	rel="stylesheet" />
+<!-- Custom Styles-->
+<link href="${contextPath}/assets/css/custom-styles.css"
+	rel="stylesheet" />
+<!-- Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
 <body>
+	<%@ include file="/WEB-INF/view/include/nav_top.jsp"%>
+	<%@ include file="/WEB-INF/view/include/nav_side.jsp"%>
 
+	<div id="page-wrapper">
+		<div class="header">
+			<h1 class="page-header">쪽지</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+			</ol>
+		</div>
+
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-content">
+						<div class="alert alert-light">
+
+
+
+							<div class="clear"></div>
+							<div id="alldelete">
+
+								<input type="text" name="search" style="width: 100px"
+									placeholder="검색">
+								<button>
+									<i class="material-icons dp48" onclick="javascript:submit()">search</i>
+								</button>
+
+
+								<button type="button" class="btn btn-danger btn-sm"
+									style="float: right;">전체 삭제</button>
+							</div>
+
+
+							<div class="clear"></div>
+
+							<br>
+
+							<li>
+								<div id=messagebox>
+									<strong>John Doe</strong> <span class="pull-right text-muted">
+										<em>Today</em>
+									</span>
+									<p>Lorem Ipsum has been the industry's standard dummy text
+										ever since the 1500s...
+									<div id=message>
+										<button type="button" class="btn btn-primary btn-xs"
+											onclick="window.open('Message_write.html','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
+										<button type="button" class="btn btn-primary btn-xs">확인하기</button>
+										<button type="button" class="btn btn-danger btn-xs">삭제하기</button>
+										<div id=message>
+											</p>
+										</div>
+										</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div id=messagebox>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+									<p>Lorem Ipsum has been the industry's standard dummy text
+										ever since an kwilnw...
+									<div id=message>
+										<button type="button" class="btn btn-primary btn-xs"
+											onclick="window.open('Message_write.html','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
+										<button type="button" class="btn btn-primary btn-xs">확인하기</button>
+										<button type="button" class="btn btn-danger btn-xs">삭제하기</button>
+									</div>
+									</p>
+								</div> </a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div id=messagebox>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+									<p>Lorem Ipsum has been the industry's standard dummy text
+										ever since the...
+									<div id=message>
+										<button type="button" class="btn btn-primary btn-xs"
+											onclick="window.open('Message_write.html','window','width=450,height=500,location=no,status=no,scrollbars=yes');">답장하기</button>
+										<button type="button" class="btn btn-primary btn-xs">확인하기</button>
+										<button type="button" class="btn btn-danger btn-xs">삭제하기</button>
+									</div>
+									</p>
+
+								</div>
+							</li>
+
+						</div>
+
+
+						<div class="clearBoth"></div>
+					</div>
+
+
+
+
+					<%@ include file="/WEB-INF/view/include/footer.jsp"%>
 </body>
 </html>
