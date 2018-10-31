@@ -90,8 +90,6 @@ textarea {
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
 <body>
-	<%@ include file="/WEB-INF/view/include/nav_top.jsp"%>
-	<%@ include file="/WEB-INF/view/include/nav_side.jsp"%>
 
 	<div class="card">
 
@@ -145,6 +143,6 @@ textarea {
 	<script src="assets/js/custom-scripts.js"></script>
 
 
-	<%@ include file="/WEB-INF/view/include/footer.jsp"%>
+
 </body>
 </html>
