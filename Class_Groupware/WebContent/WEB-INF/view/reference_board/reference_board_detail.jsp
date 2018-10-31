@@ -38,7 +38,9 @@
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
 	integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
-	crossorigin="anonymous"/>
+	crossorigin="anonymous" />
+
+
 
 </head>
 <body>
@@ -127,192 +129,182 @@
 																<button class="btn">등록</button>
 															</td>
 														</form>
+													</div>
 												</td>
-												</div>
 											</tr>
 										</tbody>
 									</table>
-									<!--댓글-->
-									<div class="re_comment">
-										<table class="table-responsive">
-											<thead>
-												<tr>
-													<td>
-														<ul class="list-inline">
-															<li>댓글 작성자1</li>|
-															<li>작성일 2018.10.29</li>|
-															<li><a href="#"> <i class="fas fa-reply"></i> 답글
-																	달기 </li>
-														</ul>
-													</td>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>댓글 내용1</td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
-									<div class="clear"></div>
-									<hr>
-									<div class="reply_write_area">
-										<form>
-											<div class="reply_write_left">닉네임</div>
-											<div class="reply_write_right">
-												<div class="reply_write_text">
-													<textarea class="form-control" rows="5" cols="70"
-														placeholder="답글 달기 누르면 나오는 모양" class="span10"></textarea>
-												</div>
-												<div class="clear"></div>
-												<div class="reply_write_button">
-													<button class="btn" style="float: right">등록</button>
-												</div>
-											</div>
-										</form>
-									</div>
-									<div class="clear"></div>
-									<div class="re_comment">
-										<table class="table-responsive">
-											<tr>
-											<thead>
-												<tr>
-													<td>
-														<ul class="list-inline">
-															<li>댓글 작성자2</li>|
-															<li>작성일 2018.10.29</li>|
-															<li><i onclick="create_recomment_area()"
-																class="fas fa-reply"></i> 답글 달기</li>
-														</ul>
-													</td>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>댓글 내용2</td>
-												</tr>
-											</tbody>
-											</tr>
-										</table>
-									</div>
-									<div class="clear"></div>
-									<hr>
-									<div id="test">
-										dd
-										<!--여기에 댓글상자 생성-->
-									</div>
-									<div class="clear"></div>
-									<div class="re_comment">
-										<table class="table-responsive">
-											<tr>
-											<thead>
-												<tr>
-													<td>
-														<ul class="list-inline">
-															<li>댓글 작성자3</li>|
-															<li>작성일 2018.10.29</li>|
-															<li><a href="#"> <i class="fas fa-reply"></i> 답글
-																	달기 </li>
-														</ul>
-													</td>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>너는 모르지? <br> 귀여운 <br> 푸들의 복실복실함 <br>
-													</td>
-												</tr>
-											</tbody>
-											</tr>
-										</table>
-									</div>
-									<div class="clear"></div>
-									<hr>
-
-									<div class="re_comment_icon">
-										<i class="fab fa-replyd"></i>
-									</div>
-									<div class="re_comment">
-										<table class="table-responsive">
-											<tr>
-											<thead>
-												<tr>
-													<td>
-														<ul class="list-inline">
-															<li>댓글 작성자4</li>|
-															<li>작성일 2018.10.29</li>|
-															<li><a href="#"> <i class="fas fa-reply"></i> 답글
-																	달기 </li>
-														</ul>
-													</td>
-
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>@ <b>댓글작성자3</b> 대댓글임ㅇㅅㅇ <br> 기여운 카와이한 고양이 <br>
-														기여운 카와이한 멍뭉이 <br> ㅇㅅㅇ, ㅇㅂㅇ, ㅇㅁㅇ,
-														'^'(~~~~~~!@!@!@!@!@@#@#@#@#@#@#@#@#@# <br> ㅁㄴㅇㅁㄴㅇㄴ
-													</td>
-												</tr>
-											</tbody>
-											</tr>
-										</table>
-									</div>
-									<div class="clear"></div>
-									<hr>
-
-									<div class="re_comment_icon">
-										<i class="fab fa-replyd"></i>
-									</div>
-									<div class="re_comment">
-										<table class="table-responsive">
-											<tr>
-											<thead>
-												<tr>
-													<td>
-														<ul class="list-inline">
-															<li>댓글 작성자5</li>|
-															<li>작성일 2018.10.29</li>|
-															<li><a href="#"> <i class="fas fa-reply"></i> 답글
-																	달기 </li>
-														</ul>
-													</td>
-
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><b>@댓글작성자4</b> 대댓글임ㅇㅅㅇ</td>
-												</tr>
-											</tbody>
-											</tr>
-										</table>
-									</div>
-									<div class="clear"></div>
-									<hr>
-
-
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="clear"></div>
 
-					<%@ include file="/WEB-INF/view/include/footer.jsp"%>
+
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<div class="box box-solid">
+									<div class="box-body">
+										<div class="box-group" id="accordion">
+											<div class="panel box box-primary">
+												<table class="table-responsive">
+													<thead>
+														<tr>
+															<td>
+																<ul class="list-inline">
+																	<li>댓글 작성자1</li>|
+																	<li>작성일 2018.10.29</li>|
+																	<li><div class="box-header with-border">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseOne"> <i class="fas fa-reply"></i>답글 달기 </a>
+																		</div></li>
+																</ul>
+															</td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>호호'ㅅ'</td>
+														</tr>
+													</tbody>
+												</table>
+											
+												<div id="collapseOne" class="panel-collapse collapse in">
+													<div class="box-body">
+														<div class="reply_write_area">
+															<form>
+																<div class="reply_write_left">닉네임</div>
+																<div class="reply_write_right">
+																	<div class="reply_write_text">
+																		<textarea class="form-control" rows="5" cols="70"
+																			placeholder="답글 달기 누르면 나오는 모양" class="span10"></textarea>
+																	</div>
+																	<div class="clear"></div>
+																	<div class="reply_write_button">
+																		<button class="btn" style="float: right">등록</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="panel box box-primary">
+												<table class="table-responsive">
+													<thead>
+														<tr>
+															<td>
+																<ul class="list-inline">
+																	<li>댓글 작성자2</li>|
+																	<li>작성일 2018.10.29</li>|
+																	<li><div class="box-header with-border">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseTwo"> <i class="fas fa-reply"></i>답글 달기 </a>
+																		</div></li>
+																</ul>
+															</td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>기여운 카와이한 고양이 <br> 기여운 카와이한 멍뭉이 <br>
+																ㅇㅅㅇ, ㅇㅂㅇ, ㅇㅁㅇ, '^'(~~~~~~!@!@!@!@!@@#@#@#@#@#@#@#@#@# <br>
+																ㅁㄴㅇㅁㄴㅇㄴ
+															</td>
+														</tr>
+													</tbody>
+												</table>
+										
+												
+												<div id="collapseTwo" class="panel-collapse collapse">
+													<div class="box-body">
+														<div class="reply_write_area">
+															<form>
+																<div class="reply_write_left">닉네임</div>
+																<div class="reply_write_right">
+																	<div class="reply_write_text">
+																		<textarea class="form-control" rows="5" cols="70"
+																			placeholder="답글 달기 누르면 나오는 모양" class="span10"></textarea>
+																	</div>
+																	<div class="clear"></div>
+																	<div class="reply_write_button">
+																		<button class="btn" style="float: right">등록</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel box box-primary">
+												<table class="table-responsive">
+													<thead>
+														<tr>
+															<td>
+																<ul class="list-inline">
+																	<li>댓글 작성자3</li>|
+																	<li>작성일 2018.10.29</li>|
+																	<li><div class="box-header with-border">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseThree"> <i class="fas fa-reply"></i>답글 달기 </a>
+																		</div></li>
+																</ul>
+															</td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>너는 모르지? <br> 귀여운 <br> 푸들의 복실복실함 <br></td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<div id="collapseThree" class="panel-collapse collapse">
+													<div class="box-body">
+														<div class="reply_write_area">
+															<form>
+																<div class="reply_write_left">닉네임</div>
+																<div class="reply_write_right">
+																	<div class="reply_write_text">
+																		<textarea class="form-control" rows="5" cols="70"
+																			placeholder="답글 달기 누르면 나오는 모양" class="span10"></textarea>
+																	</div>
+																	<div class="clear"></div>
+																	<div class="reply_write_button">
+																		<button class="btn" style="float: right">등록</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+				<%@ include file="/WEB-INF/view/include/footer.jsp"%>
 			</div>
 		</div>
-		<!-- jQuery Js -->
-		<script src="${contextPath}/assets/js/jquery-1.10.2.js"></script>
-		<!-- Bootstrap Js -->
-		<script src="${contextPath}/assets/js/bootstrap.min.js"></script>
-		<script src="${contextPath}/assets/materialize/js/materialize.min.js"></script>
-		<!-- Metis Menu Js -->
-		<script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
-		<!-- Custom Js -->
-		<script src="${contextPath}/assets/js/custom-scripts.js"></script>
-		<script src="${contextPath}/assets/reference_board/js/referencd_board_detail.js"></script>
+	</div>
+
+
+	<!-- jQuery Js -->
+	<script src="${contextPath}/assets/js/jquery-1.10.2.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="${contextPath}/assets/js/bootstrap.min.js"></script>
+	<script src="${contextPath}/assets/materialize/js/materialize.min.js"></script>
+	<!-- Metis Menu Js -->
+	<script src="${contextPath}/assets/js/jquery.metisMenu.js"></script>
+	<!-- Custom Js -->
+	<script src="${contextPath}/assets/js/custom-scripts.js"></script>
+	<script src="${contextPath}/assets/open_board/js/open_board_detail.js"></script>
+
 </body>
 </html>
+r
