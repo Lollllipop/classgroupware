@@ -49,6 +49,15 @@ footer>strong {
 	float: left;
 }
 
+.write_btn {
+	float: right;
+}
+
+.list_btn {
+	padding-left: 10px;
+	float: right;
+}
+
 .selectReadCountText {
 	margin-top: 10px;
 	float: left;
@@ -56,7 +65,6 @@ footer>strong {
 
 .writebtnArea {
 	float: right;
-	margin-right: 10px;
 }
 
 .writebtnArea>button {
@@ -64,9 +72,8 @@ footer>strong {
 }
 
 .pagination {
-	margin-left: 15px;
+	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 30px;
 }
 
 .selectSearchValue {
@@ -104,86 +111,74 @@ footer>strong {
             <h1 class="page-header">과제</h1>
          </div>
          <div id="page-inner">
+         
             <%-- 여기에 코드 작성!! --%>
             <div class="row">
 					<div class="col-md-12">
 						<div class="card">
-							<div class="card-action">
-								<strong>과제</strong>
-							</div>
-							<div class="clear"></div>
-							<div class="cntAllTextArea">총 게시물 수</div>
-							<div class="searcharea">
-								<form class="form-inline d-flex justify-content-center">
 
-									<div class="selectSearchValue">
-										<select class="form-control input-sm" name="selectReadCount">
-											<option value="제목" selected="selected">제목</option>
-											<option value="내용">내용</option>
-										</select>
-									</div>
-									<div class="search_icon">
-										<i class="material-icons dp48">search</i>
-									</div>
-									<div class="search_area_form_input">
-										<input type="text" class="form-control"
-											placeholder="으로 검색합니다." id="saerch_form_input_value">
-									</div>
-								</form>
-							</div>
-							<div class="clear"></div>
-							<div class="row">
-
-								<div class="card-content">
-									<a href="#">
-										<div class="col-md-12 col-sm-6">
-											<div class="card blue-grey darken-1">
-												<div class="card-content white-text">
-
-													<span class="card-title">과제1 - 보고서</span>
-													<p>첨부파일을 참고하여 과제를 기한내에 제출하세요.</p>
-													<br>
-													<p>제출기간 2018.11.01 ~ 2018.11.09</p>
+							<div class="table-responsive">
+								<table class="table" id="dataTables-example">
+									<form class="form-group">
+										<thead>
+											<tr>
+												<td style="text-align: center">제목</td>
+												<td><input type="text" class="form-control"
+													placeholder="내용을 입력해주세요"></td>
+											</tr>
+											<tr>
+												<td style="text-align: center">작성자</td>
+												<input type="hidden" name="아이디" value="">
+												<td>강사</td>
+											</tr>
+											<tr>
+												<td style="text-align: center">제출기간 시작일</td>
+												<td><input type="datetime-local"></td>
+											</tr>
+											<tr>
+												<td style="text-align: center">제출기간 마감일</td>
+												<td><input type="datetime-local"></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td colspan="3"><textarea
+														class="form-control col-sm-12" rows="12"
+														placeholder="내용을 입력해주세요." class="span5"></textarea></td>
+											</tr>
+										</tbody>
+										<form id="file_upload_form" method="post"
+											enctype="multipart/form-data">
+											<tr>
+												<td>첨부파일</td>
+												<td><input type="file"></td>
+												<div class="checkbox">
+													<label>
+														<td><input type="checkbox">선택파일삭제</td>
+													</label>
+												</div>
+											</tr>
+										</form>
+										<tr>
+											<td colspan="3">
+												<div class="list_btn">
+													<button class="btn">목록으로</button>
+													<!--onclicn시 file data가 있으면같이 submit 없으면 본문만 submit(?)-->
+												</div>
+												<div class="write_btn">
+													<button class="btn">등록</button>
+													<!--onclicn시 file data가 있으면같이 submit 없으면 본문만 submit(?)-->
 												</div>
 
-											</div>
-										</div>
-									</a>
-								</div>
+											</td>
+										</tr>
+								</table>
+								</form>
 							</div>
-							<div class="clear"></div>
-							<div class="table-responsive">
-								<div class="writebtnArea">
-									<button type="button" class="btn">글쓰기</button>
-								</div>
 
-								<div class="clear"></div>
-
-								<div style="width: 230px; margin-left: auto; margin-right: auto;">
-									<ul class="pagination">
-										<li class="page-item"><a class="page-link" href="#">
-												<span>«</span>
-										</a></li>
-										<li class="page-item active"><a class="page-link"
-											href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">3</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">4</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">
-												<span>»</span>
-										</a></li>
-									</ul>
-								</div>
-
-							</div>
 						</div>
 					</div>
-
 				</div>
-            
             
             <%@ include file="/WEB-INF/view/include/footer.jsp" %>
          </div>
