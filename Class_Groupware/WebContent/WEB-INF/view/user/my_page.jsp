@@ -35,12 +35,54 @@
 
 		<div id="page-wrapper">
 			<div class="header">
-				<h1 class="page-header">temp</h1>
+				<h1 class="page-header">마이페이지</h1>
 			</div>
 			<div id="page-inner">
 			
 			
-				<%-- 여기에 코드 작성!! --%>
+				<div class="row">
+
+					<div class="col-md-6">
+						<div class="card" style="height: 250px;">
+							<div class="card-content">
+								<span class="card-title">나의 프로필</span>
+								<p>이름 : 최다한</p>
+								<p>이메일 : dahans@naver.com</p>
+								<p>가입일 : 2018-10-07</p>
+							</div>
+							.
+							<div class="card-action">
+								<a href="#">내가 쓴 글</a> <a href="#">수정</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-6">
+						<div class="card" style="height: 250px;">
+							<div class="card-content">
+								<span class="card-title">나의 클래스</span>
+								<p>소속 클래스 : B</p>
+								<p>담당 강사 : 이민규 강사</p>
+								<p>
+									<br>
+								</p>
+								<p>
+									<br>
+								</p>
+								<p>
+									<br>
+								</p>
+								<p>
+									<br>
+								</p>
+							</div>
+							<!--  
+							<div class="card-action">
+								<a href="#">This is a link</a> <a href="#">This is a link</a> -->
+						</div>
+					</div>
+
+				</div>
 				
 				
 				<%@ include file="/WEB-INF/view/include/footer.jsp" %>

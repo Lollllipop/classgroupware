@@ -1,4 +1,4 @@
-package com.ja.classgroupware.command;
+package com.ja.classgroupware.base.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -3,6 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <c:set var="contextPath" value="<%=request.getContextPath()%>"></c:set>
 
 <!DOCTYPE html>
@@ -43,6 +44,12 @@
 <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css"
 	rel="stylesheet">
 
+
+<script>
+  function showPopup() { 
+	window.open("check_id_popup.jsp", "a", "width=400, height=150, left=200, top=200"); 
+  }
+</script>
 
 <title>Welcome to ChoongAng!</title>
 
@@ -118,10 +125,9 @@ body {
 
 
 		<a href="#"><img src="${contextPath}/assets/main/img/login.jpg" alt="..."
-			class="img-responsive center-block"></a> <br> <br> <a
+			class="img-responsive center-block" onclick="showPopup();"></a> <br> <br> <a
 			href="#"><img src="${contextPath}/assets/main/img/joinmember.jpg" alt="..."
 			class="img-responsive center-block"></a> <br> <br> <br>
-
 		<div class="img_box" style="width: 330px; margin: auto;">
 			<a href="#"><img src="${contextPath}/assets/main/img/kakao.png" width="100"
 				height="100" style="float: left; margin-right: 15px;" alt="..."
@@ -133,30 +139,6 @@ body {
 				style="float: left;" alt="..." class="img-responsive center-block"></a>
 		</div>
 	</div>
-
-
-
-
-
-	<!--  
-	 <div style="text-align: center; margin-left: auto; margin-right: auto;">
-    	<a href="#"><input type = 'image' src="assets/img/login.jpg" value = 'Login'></a>	
- 	<br>
- 	<br>
-       <a href="#"><input type = 'image' src="assets/img/joinmember.jpg" value = 'joinmember'></a>
-	<br>
-	<br>
-  		<a href="#"><input type = 'image' src="assets/img/kakao.jpg" value = 'kakao'></a>
-  	<br>
-  	<br>
-  		<a href="#"><input type = 'image' src="assets/img/naver.jpg" value = 'naver'></a>
-  	<br>
-  	<br>
-  		<a href="#"><input type = 'image' src="assets/img/facebook.jpg" value = 'facebook'></a>
-  	<br>
-  	</div> -->
-
-
 
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

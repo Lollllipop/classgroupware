@@ -1,4 +1,4 @@
-package com.ja.classgroupware.listener;
+package com.ja.classgroupware.base.listener;
 
 import java.io.IOException;
 import java.io.StringReader;

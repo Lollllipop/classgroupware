@@ -21,11 +21,11 @@
 	</param-value>
   </context-param>
   <listener>
-    <listener-class>com.ja.classgroupware.listener.DBCPInitListener</listener-class>
+    <listener-class>com.ja.classgroupware.base.listener.DBCPInitListener</listener-class>
   </listener>
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <filter-class>com.ja.classgroupware.filter.CharacterEncodingFilter</filter-class>
+    <filter-class>com.ja.classgroupware.base.filter.CharacterEncodingFilter</filter-class>
     <init-param>
       <param-name>ENCODING_TYPE</param-name>
       <param-value>UTF-8</param-value>
@@ -38,7 +38,7 @@
   </filter-mapping>
   <servlet>
     <servlet-name>ControllerUsingURI</servlet-name>
-    <servlet-class>com.ja.classgroupware.controller.ControllerUsingURI</servlet-class>
+    <servlet-class>com.ja.classgroupware.base.controller.ControllerUsingURI</servlet-class>
     <init-param>
       <param-name>configFile</param-name>
       <param-value>

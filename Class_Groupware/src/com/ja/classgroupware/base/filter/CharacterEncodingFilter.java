@@ -1,4 +1,4 @@
-package com.ja.classgroupware.filter;
+package com.ja.classgroupware.base.filter;
 
 import java.io.IOException;
 import javax.servlet.Filter;

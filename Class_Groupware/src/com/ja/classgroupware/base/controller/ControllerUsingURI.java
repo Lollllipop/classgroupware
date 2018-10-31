@@ -1,4 +1,4 @@
-package com.ja.classgroupware.controller;
+package com.ja.classgroupware.base.controller;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ja.classgroupware.command.CommandHandler;
+import com.ja.classgroupware.base.command.CommandHandler;
 
 public class ControllerUsingURI extends HttpServlet {
 	

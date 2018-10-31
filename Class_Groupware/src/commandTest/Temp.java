@@ -3,7 +3,7 @@ package commandTest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ja.classgroupware.command.CommandHandler;
+import com.ja.classgroupware.base.command.CommandHandler;
 
 public class Temp implements CommandHandler {
 	
