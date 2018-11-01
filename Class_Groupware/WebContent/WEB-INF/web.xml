@@ -10,8 +10,8 @@
     <param-value>
 		jdbcDriver=oracle.jdbc.driver.OracleDriver
 		jdbcUrl=jdbc:oracle:thin:@localhost:1521:xe
-		dbUser=team2
-		dbPass=team2
+		dbUser=team
+		dbPass=team
 		validationQuery=select 1
 		minIdle=5
 		maxTotal=50
