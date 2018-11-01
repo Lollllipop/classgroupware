@@ -32,75 +32,7 @@
 	rel='stylesheet' type='text/css' />
 <link href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css"
 	rel="stylesheet">
-
-<%-- 여기에 css등 링크 작성!! --%>
-<style>
-.clear {
-	clear: both;
-}
-
-footer>strong {
-	color: #F44336;
-	font-size: 18px;
-}
-
-.cntAllTextArea {
-	float: left;
-	margin-left: 20px;
-}
-
-.selectReadCountArea {
-	float: left;
-}
-
-.selectReadCountSelect {
-	float: left;
-}
-
-.selectReadCountText {
-	margin-top: 10px;
-	float: left;
-}
-
-.writebtnArea {
-	float: right;
-	margin-right: 10px;
-}
-
-.writebtnArea>button {
-	background-color: #F44336;
-}
-
-.pagination {
-	margin-left: 15px;
-	margin-right: auto;
-	margin-bottom: 30px;
-}
-
-.selectSearchValue {
-	margin-top: 10px;
-	float: left;
-}
-
-.search_icon {
-	margin-top: 10px;
-	float: right;
-}
-
-.search_area_form_input {
-	float: right;
-}
-
-.searcharea {
-	margin-top: 30px;
-	margin-right: 30px;
-	float: right;
-}
-
-.card-action {
-	float: left;
-}
-</style>
+<link href="${contextPath}/assets/homework_board/css/homework_board_list.css" rel="stylesheet" >
 </head>
 <body>
 	<div id="wrapper">
