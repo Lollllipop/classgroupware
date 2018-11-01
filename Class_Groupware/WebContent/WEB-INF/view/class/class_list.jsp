@@ -52,108 +52,113 @@
 
 			<div id="page-inner">
 				<div class="row">
-
-					<div class="card">
-						<div class="card-action">
-							<b>수강 중</b>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-action">
+								<b>수강 중</b>
+							</div>
+							<!-- 수강중인 수업이 없는 학생은 카드는 보이되, 수업은 보이지 않고 "수강중인 수업이 없습니다." 멘트를 보이게 해주세요 -->
+							<div class="card-image">
+								<ul class="collection">
+									<li class="collection-item avatar"><i
+										class="material-icons circle blue">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (A) - 봉미선 강사</span><br>
+										<p style="float: left;">
+											디지털융합 SoftWare 코딩 예비교육 <br> 2018.12.26 ~ 2019.01.30,
+											09:00~18:00
+										</p> <!-- 수강신청이 되어있는 학생은 수강중인 수업 리스트가 보이며, 여기서 수강 포기 버튼만 보임 --> <!-- 강사의 경우 본인의 수업 리스트가 보이며, 수강 포기 버튼 안보임. 강사는 수업 포기할 권한 없음. 마스터가 있음 -->
+										<span style="float: right;">
+											<button class="btn btn-warning">
+												<i class="material-icons left">delete</i>수강포기
+											</button>
+									</span></li>
+									<li class="collection-item avatar"><i
+										class="material-icons circle blue">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (B) - 신영만 강사</span><br>
+										<p style="float: left;">
+											JAVA기반 빅데이타 IT콘텐츠 정보시스템 취업과정 <br> 2018.08.06 ~
+											2018.12.27, 09:00~18:00
+										</p> <span style="float: right;">
+											<button class="btn btn-warning">
+												<i class="material-icons left">delete</i>수강포기
+											</button>
+									</span></li>
+								</ul>
+							</div>
 						</div>
-						<!-- 수강중인 수업이 없는 학생은 카드는 보이되, 수업은 보이지 않고 "수강중인 수업이 없습니다." 멘트를 보이게 해주세요 -->
-						<div class="card-image">
-							<ul class="collection">
-								<li class="collection-item avatar">
-									<i class="material-icons circle blue">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (A) - 봉미선 강사</span><br>
-									<p style="float: left;"> 디지털융합 SoftWare 코딩 예비교육 <br> 2018.12.26 ~ 2019.01.30, 09:00~18:00</p> 
-									<!-- 수강신청이 되어있는 학생은 수강중인 수업 리스트가 보이며, 여기서 수강 포기 버튼만 보임 -->
-									<!-- 강사의 경우 본인의 수업 리스트가 보이며, 수강 포기 버튼 안보임. 강사는 수업 포기할 권한 없음. 마스터가 있음 -->
-									<span style="float: right;">
-										<button class="btn btn-warning">
-											<i class="material-icons left">delete</i>수강포기
-										</button>
-									</span>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle blue">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (B) - 신영만 강사</span><br>
-									<p style="float: left;"> JAVA기반 빅데이타 IT콘텐츠 정보시스템 취업과정 <br> 2018.08.06 ~ 2018.12.27, 09:00~18:00 </p> 
-									<span style="float: right;">
-										<button class="btn btn-warning">
-											<i class="material-icons left">delete</i>수강포기
-										</button>
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
 
-					<br>
+						<br>
 
-					<div class="card">
-						<div class="card-action">
-							<b>수강 신청</b>
-						</div>
-						<div class="card-image">
-							<ul class="collection">
-								<li class="collection-item avatar">
-									<i class="material-icons circle red">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (C) - 신짱구 강사</span><br>
-									<p style="float: left;"> 머신러닝 기반 빅데이터 분석 개발자 전문과정 <br> 2018. 10. 29 ~ 2019. 04.23, 09:00 ~18:00</p> 
-									<span style="float: right;">
-										<!-- 학생의 경우: 수강중인 수업 이외의 수업 리스트가 보이며, 수강 신청 버튼이 보임  -->
-										<!-- 강사의 경우: 수강중인 수업 이외의 수업 리스트가 보이며, 수강 신청 버튼이 안보임  -->
-										<button class="btn btn-success">
-											<i class="material-icons left">done</i>수강신청
-										</button>
-										<!-- 마스터의 경우: 수강중인 수업이 없으니, 모든 수업 리스트가 이곳에 보이며, 수업 수정/삭제 버튼이 보임  -->
-										<button class="btn btn-danger">
-											<i class="material-icons left">settings</i>수업 수정
-										</button>
-										<button class="btn btn-danger">
-											<i class="material-icons left">settings</i>수업 삭제
-										</button>
-									</span>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle red">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (D) - 김철수 강사</span><br>
-									<p style="float: left;"> DBMS기반 빅데이터 응용 SW개발자 전문과정 <br> 2018. 11. 27 ~ 2019. 05. 23, 09:00 ~ 18:00</p> 
-									<span style="float: right;">
-										<button class="btn btn-success">
-											<i class="material-icons left">done</i>수강신청
-										</button>
-									</span>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle red">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (E) - 한유리 강사</span><br>
-									<p style="float: left;"> 빅데이터 활용 JAVA기반 SW개발자 양성과정 <br> 2018. 12. 27 ~ 2019. 06. 21, 09:00 ~ 18:00</p> 
-									<span style="float: right;">
-										<button class="btn btn-success">
-											<i class="material-icons left">done</i>수강신청
-										</button>
-									</span>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle red">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (F) - 이훈이 강사</span><br>
-									<p style="float: left;"> 표준프레임워크 기반 응용 SW개발자 양성과정 <br> 2018. 12. 11~ 2019. 06. 05, 09:00~ 18:00</p> 
-									<span style="float: right;">
-										<button class="btn btn-success">
-											<i class="material-icons left">done</i>수강신청
-										</button>
-									</span>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle red">mode_edit</i> 
-									<span class="title">청년아카데미 대학생 반 (G) - 맹구 강사</span><br>
-									<p style="float: left;"> 자바(JAVA)기반 IT콘텐츠 개발자 양성과정 <br> 2018. 11. 14 ~ 2019. 05. 13, 09:00 ~ 18:00</p> 
-									<span style="float: right;">
-										<button class="btn btn-success">
-											<i class="material-icons left">done</i>수강신청
-										</button>
-									</span>
-								</li>
-							</ul>
+						<div class="card">
+							<div class="card-action">
+								<b>수강 신청</b>
+							</div>
+							<div class="card-image">
+								<ul class="collection">
+									<li class="collection-item avatar"><i
+										class="material-icons circle red">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (C) - 신짱구 강사</span><br>
+										<p style="float: left;">
+											머신러닝 기반 빅데이터 분석 개발자 전문과정 <br> 2018. 10. 29 ~ 2019.
+											04.23, 09:00 ~18:00
+										</p> <span style="float: right;"> <!-- 학생의 경우: 수강중인 수업 이외의 수업 리스트가 보이며, 수강 신청 버튼이 보임  -->
+											<!-- 강사의 경우: 수강중인 수업 이외의 수업 리스트가 보이며, 수강 신청 버튼이 안보임  -->
+											<button class="btn btn-success">
+												<i class="material-icons left">done</i>수강신청
+											</button> <!-- 마스터의 경우: 수강중인 수업이 없으니, 모든 수업 리스트가 이곳에 보이며, 수업 수정/삭제 버튼이 보임  -->
+											<button class="btn btn-danger">
+												<i class="material-icons left">settings</i>수업 수정
+											</button>
+											<button class="btn btn-danger">
+												<i class="material-icons left">settings</i>수업 삭제
+											</button>
+									</span></li>
+									<li class="collection-item avatar"><i
+										class="material-icons circle red">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (D) - 김철수 강사</span><br>
+										<p style="float: left;">
+											DBMS기반 빅데이터 응용 SW개발자 전문과정 <br> 2018. 11. 27 ~ 2019. 05.
+											23, 09:00 ~ 18:00
+										</p> <span style="float: right;">
+											<button class="btn btn-success">
+												<i class="material-icons left">done</i>수강신청
+											</button>
+									</span></li>
+									<li class="collection-item avatar"><i
+										class="material-icons circle red">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (E) - 한유리 강사</span><br>
+										<p style="float: left;">
+											빅데이터 활용 JAVA기반 SW개발자 양성과정 <br> 2018. 12. 27 ~ 2019. 06.
+											21, 09:00 ~ 18:00
+										</p> <span style="float: right;">
+											<button class="btn btn-success">
+												<i class="material-icons left">done</i>수강신청
+											</button>
+									</span></li>
+									<li class="collection-item avatar"><i
+										class="material-icons circle red">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (F) - 이훈이 강사</span><br>
+										<p style="float: left;">
+											표준프레임워크 기반 응용 SW개발자 양성과정 <br> 2018. 12. 11~ 2019. 06.
+											05, 09:00~ 18:00
+										</p> <span style="float: right;">
+											<button class="btn btn-success">
+												<i class="material-icons left">done</i>수강신청
+											</button>
+									</span></li>
+									<li class="collection-item avatar"><i
+										class="material-icons circle red">mode_edit</i> <span
+										class="title">청년아카데미 대학생 반 (G) - 맹구 강사</span><br>
+										<p style="float: left;">
+											자바(JAVA)기반 IT콘텐츠 개발자 양성과정 <br> 2018. 11. 14 ~ 2019. 05.
+											13, 09:00 ~ 18:00
+										</p> <span style="float: right;">
+											<button class="btn btn-success">
+												<i class="material-icons left">done</i>수강신청
+											</button>
+									</span></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

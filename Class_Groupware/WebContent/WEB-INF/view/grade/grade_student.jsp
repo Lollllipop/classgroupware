@@ -35,7 +35,7 @@
 </head>
 <body>
 
-<!-- 성적 학생 페이지 -->
+	<!-- 성적 학생 페이지 -->
 
 
 	<div id="wrapper">
@@ -49,82 +49,82 @@
 
 			<div id="page-inner">
 				<div class="row">
-					<div class="card">
-						<div class="card-content">
-							<div class="table-responsive table-bordered">
-								<table class="table">
-									<thead>
-										<tr>
-											<th style="text-align: center; vertical-align: middle;">이름</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">평균
-												[100]</th>
-										</tr>
-									</thead>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<div class="table-responsive table-bordered">
+									<table class="table">
+										<thead>
+											<tr>
+												<th style="text-align: center; vertical-align: middle;">이름</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">평균
+													[100]</th>
+											</tr>
+										</thead>
 
-									<tbody>
-										<tr>
-											<td style="text-align: center; vertical-align: middle;">이름</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
+										<tbody>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;">이름</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
 
-									</tbody>
+										</tbody>
 
-									<tfoot>
-										<tr>
-											<td style="text-align: center; vertical-align: middle;">평균</td>
-											<td style="text-align: center; vertical-align: middle;">10</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">10</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-									</tfoot>
-								</table>
+										<tfoot>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;">평균</td>
+												<td style="text-align: center; vertical-align: middle;">10</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">10</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
 							</div>
 						</div>
-					</div>
-					<!--  End  Bordered Table  -->
-
-					<div class="card">
-						<div class="card-action">성적비교</div>
-						<div class="card-content">
-							<div id="morris-bar-chart"></div>
+						<div class="card">
+							<div class="card-action">성적비교</div>
+							<div class="card-content">
+								<div id="morris-bar-chart"></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -152,7 +152,8 @@
 	<script src="${contextPath}/assets/js/easypiechart.js"></script>
 	<script src="${contextPath}/assets/js/easypiechart-data.js"></script>
 
-	<script src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	<script
+		src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 
 	<!-- Custom Js -->
 	<script src="${contextPath}/assets/js/custom-scripts.js"></script>

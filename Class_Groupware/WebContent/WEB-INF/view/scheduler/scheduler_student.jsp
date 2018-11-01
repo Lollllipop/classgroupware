@@ -52,7 +52,7 @@
 <body>
 
 
-<!-- 학생은 보기만 할 수 있는 일정관리 페이지 -->
+	<!-- 학생은 보기만 할 수 있는 일정관리 페이지 -->
 
 
 	<div id="wrapper">
@@ -65,13 +65,11 @@
 
 			<div id="page-inner">
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="card">
-							<div class="card-content">
-								<div class="box box-primary">
-									<div class="box-body no-padding">
-										<div id="calendar"></div>
-									</div>
+					<div class="card">
+						<div class="card-content">
+							<div class="box box-primary">
+								<div class="box-body no-padding">
+									<div id="calendar"></div>
 								</div>
 							</div>
 						</div>

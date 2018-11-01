@@ -13,7 +13,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>알림 목록</title>
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <link rel="stylesheet"
 	href="${contextPath}/assets/materialize/css/materialize.min.css"
 	media="screen,projection" />
@@ -28,8 +29,10 @@
 <link href="${contextPath}/assets/css/custom-styles.css"
 	rel="stylesheet" />
 <!-- Google Fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+<link rel="stylesheet"
+	href="${contextPath}/assets/js/Lightweight-Chart/cssCharts.css">
 </head>
 <body>
 	<div id="wrapper">
@@ -43,72 +46,73 @@
 
 			<div id="page-inner">
 				<div class="row">
-
-					<div class="card">
-						<div class="card-content">
-							<form method="post" action="#" name="grade">
-								<div class="box">
-									<div class="box-header">
-										<div class="box-tools">
-											<div class="input-group input-group-sm" style="width: 150px; float: left; margin-left:20px;">
-												<input type="text" name="table_search"
-													class="form-control pull-right" placeholder="Search">
-												<div class="input-group-btn">
-													<button type="submit" class="btn btn-default">
-														<i class="fa fa-search"></i>
-													</button>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<form method="post" action="#" name="grade">
+									<div class="box">
+										<div class="box-header">
+											<div class="box-tools">
+												<div class="input-group input-group-sm"
+													style="width: 150px; float: left; margin-left: 20px;">
+													<input type="text" name="table_search"
+														class="form-control pull-right" placeholder="Search">
+													<div class="input-group-btn">
+														<button type="submit" class="btn btn-default">
+															<i class="fa fa-search"></i>
+														</button>
+													</div>
+												</div>
+												<div class="input-group input-group-sm"
+													style="float: right;">
+													<input type="submit" value="전체삭제" class="btn btn-danger" />
 												</div>
 											</div>
-											<div class="input-group input-group-sm" style="float: right;">
-												<input type="submit" value="전체삭제" class="btn btn-danger" />
-											</div>
+										</div>
+										<br> <br> <br>
+										<!-- /.box-header -->
+										<div class="box-body table-responsive no-padding">
+											<table class="table table-hover">
+												<tr>
+													<th>ID</th>
+													<th>User</th>
+													<th>Date</th>
+													<th>Status</th>
+													<th>Notice</th>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>강사</td>
+													<td>10-29-2018</td>
+													<td><span class="label label-success">확인</span></td>
+													<td><a href="#">[과제게시판]에 [과제1]가 등록되었습니다</a></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>우지현</td>
+													<td>10-28-2018</td>
+													<td><span class="label label-success">확인</span></td>
+													<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>이시우</td>
+													<td>10-25-2018</td>
+													<td><span class="label label-warning">미확인</span></td>
+													<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>최다한</td>
+													<td>10-25-2018</td>
+													<td><span class="label label-warning">미확인</span></td>
+													<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
+												</tr>
+											</table>
 										</div>
 									</div>
-									<br>
-									<br>
-									<br>
-									<!-- /.box-header -->
-									<div class="box-body table-responsive no-padding">
-										<table class="table table-hover">
-											<tr>
-												<th>ID</th>
-												<th>User</th>
-												<th>Date</th>
-												<th>Status</th>
-												<th>Notice</th>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td>강사</td>
-												<td>10-29-2018</td>
-												<td><span class="label label-success">확인</span></td>
-												<td><a href="#">[과제게시판]에 [과제1]가 등록되었습니다</a></td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>우지현</td>
-												<td>10-28-2018</td>
-												<td><span class="label label-success">확인</span></td>
-												<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>이시우</td>
-												<td>10-25-2018</td>
-												<td><span class="label label-warning">미확인</span></td>
-												<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>최다한</td>
-												<td>10-25-2018</td>
-												<td><span class="label label-warning">미확인</span></td>
-												<td><a href="#">[자유게시판]에 [글제목1]에 댓글이 등록되었습니다</a></td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</form>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -116,7 +120,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- JS Scripts-->
 	<!-- jQuery Js -->
 	<script src="${contextPath}/assets/js/jquery-1.10.2.js"></script>
@@ -136,7 +140,8 @@
 	<script src="${contextPath}/assets/js/easypiechart.js"></script>
 	<script src="${contextPath}/assets/js/easypiechart-data.js"></script>
 
-	<script src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	<script
+		src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 
 	<!-- Custom Js -->
 	<script src="${contextPath}/assets/js/custom-scripts.js"></script>

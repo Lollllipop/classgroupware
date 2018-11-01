@@ -53,7 +53,6 @@
 				<h1 class="page-header">자유게시판</h1>
 			</div>
 			<div id="page-inner">
-
 				<div class="row">
 					<div class="col-md-12">
 						<div class="card">

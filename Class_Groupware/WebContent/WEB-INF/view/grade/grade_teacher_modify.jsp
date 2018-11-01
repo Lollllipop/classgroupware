@@ -36,7 +36,7 @@
 </head>
 <body>
 
-<!-- 강사의 학생 성적 입력/수정 페이지 -->
+	<!-- 강사의 학생 성적 입력/수정 페이지 -->
 
 	<div id="wrapper">
 		<%@ include file="/WEB-INF/view/include/nav_top.jsp"%>
@@ -48,211 +48,218 @@
 
 			<div id="page-inner">
 				<div class="row">
-					<div class="card">
-						<div class="card-content">
-							<form method="post" action="#" name="grade">
-								<span style="float: right"><input type="submit" value="등록" class="btn btn-primary" /></span> <br> <br> <br>
-								<div class="table-responsive table-bordered">
-									<table class="table">
-										<thead>
-											<tr>
-												<th style="text-align: center; vertical-align: middle;">이름</th>
-												<th style="text-align: center; vertical-align: middle;">과제1
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제2
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제3
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제4
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">중간고사
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제5
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제6
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제7
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">과제8
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">기말고사
-													[<input type="text"
-													style="width: 20px; vertical-align: middle;">]
-												</th>
-												<th style="text-align: center; vertical-align: middle;">총점
-													[100]</th>
-											</tr>
-										</thead>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<form method="post" action="#" name="grade">
+									<span style="float: right"><input type="submit"
+										value="등록" class="btn btn-primary" /></span> <br> <br> <br>
+									<div class="table-responsive table-bordered">
+										<table class="table">
+											<thead>
+												<tr>
+													<th style="text-align: center; vertical-align: middle;">이름</th>
+													<th style="text-align: center; vertical-align: middle;">과제1
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제2
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제3
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제4
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">중간고사
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제5
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제6
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제7
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">과제8
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">기말고사
+														[<input type="text"
+														style="width: 20px; vertical-align: middle;">]
+													</th>
+													<th style="text-align: center; vertical-align: middle;">총점
+														[100]</th>
+												</tr>
+											</thead>
 
-										<tbody>
-											<tr>
-												<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;">총점</td>
-											</tr>
+											<tbody>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;"><a
+														href="grade_student.jsp">이름</a></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;">총점</td>
+												</tr>
 
-											<tr>
-												<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;">총점</td>
-											</tr>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;"><a
+														href="grade_student.jsp">이름</a></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;">총점</td>
+												</tr>
 
-											<tr>
-												<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;">총점</td>
-											</tr>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;"><a
+														href="grade_student.jsp">이름</a></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;">총점</td>
+												</tr>
 
-											<tr>
-												<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;">총점</td>
-											</tr>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;"><a
+														href="grade_student.jsp">이름</a></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;">총점</td>
+												</tr>
 
-											<tr>
-												<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;"><input
-													type="text" style="width: 20px; vertical-align: middle;"></td>
-												<td style="text-align: center; vertical-align: middle;">총점</td>
-											</tr>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;"><a
+														href="grade_student.jsp">이름</a></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;"><input
+														type="text" style="width: 20px; vertical-align: middle;"></td>
+													<td style="text-align: center; vertical-align: middle;">총점</td>
+												</tr>
 
 
-										</tbody>
+											</tbody>
 
-										<tfoot>
-											<tr>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-												<td style="text-align: center; vertical-align: middle;">평균</td>
-											</tr>
-										</tfoot>
-									</table>
-								</div>
-							</form>
+											<tfoot>
+												<tr>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+													<td style="text-align: center; vertical-align: middle;">평균</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
-					<!--  End  Bordered Table  -->
 				</div>
 				<%@ include file="/WEB-INF/view/include/footer.jsp"%>
 			</div>
@@ -278,7 +285,8 @@
 	<script src="${contextPath}/assets/js/easypiechart.js"></script>
 	<script src="${contextPath}/assets/js/easypiechart-data.js"></script>
 
-	<script src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	<script
+		src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 	<!-- Custom Js -->
 	<script src="${contextPath}/assets/js/custom-scripts.js"></script>
 </body>

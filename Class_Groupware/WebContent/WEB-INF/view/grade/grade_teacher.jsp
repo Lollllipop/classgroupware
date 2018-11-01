@@ -36,7 +36,7 @@
 </head>
 <body>
 
-<!-- 성적 강사,마스터 전체학생 전체성적 볼 수 만 있는 페이지 -->
+	<!-- 성적 강사,마스터 전체학생 전체성적 볼 수 만 있는 페이지 -->
 
 	<div id="wrapper">
 		<%@ include file="/WEB-INF/view/include/nav_top.jsp"%>
@@ -48,154 +48,163 @@
 
 			<div id="page-inner">
 				<div class="row">
-					<div class="card">
-						<div class="card-content">
-							<!-- 강사라면 편집페이지로 넘어가는 버튼 보임. 마스터는 안보임 -->
-							<span style="float: right">
-								<button class="btn btn-primary" onclick="location.href='grade_teacher_modify.jsp' ">
-									<i class="material-icons left">done</i>성적 입력
-								</button>
-							</span> <br> <br> <br>
-							<div class="table-responsive table-bordered">
-								<table class="table">
-									<thead>
-										<tr>
-											<th style="text-align: center; vertical-align: middle;">이름</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">과제1
-												[10]</th>
-											<th style="text-align: center; vertical-align: middle;">평균
-												[100]</th>
-										</tr>
-									</thead>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<!-- 강사라면 편집페이지로 넘어가는 버튼 보임. 마스터는 안보임 -->
+								<span style="float: right">
+									<button class="btn btn-primary"
+										onclick="location.href='grade_teacher_modify.jsp' ">
+										<i class="material-icons left">done</i>성적 입력
+									</button>
+								</span> <br> <br> <br>
+								<div class="table-responsive table-bordered">
+									<table class="table">
+										<thead>
+											<tr>
+												<th style="text-align: center; vertical-align: middle;">이름</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">과제1
+													[10]</th>
+												<th style="text-align: center; vertical-align: middle;">평균
+													[100]</th>
+											</tr>
+										</thead>
 
-									<tbody>
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-										
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-										
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-										
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-										
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-										
-										<tr>
-											<td style="text-align: center; vertical-align: middle;"><a href="grade_student.jsp">이름</a></td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">2</td>
-											<td style="text-align: center; vertical-align: middle;">3</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
+										<tbody>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
 
-									</tbody>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
 
-									<tfoot>
-										<tr>
-											<td style="text-align: center; vertical-align: middle;">평균</td>
-											<td style="text-align: center; vertical-align: middle;">10</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">10</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-											<td style="text-align: center; vertical-align: middle;">6</td>
-											<td style="text-align: center; vertical-align: middle;">9</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">8</td>
-											<td style="text-align: center; vertical-align: middle;">5</td>
-											<td style="text-align: center; vertical-align: middle;">7</td>
-										</tr>
-									</tfoot>
-								</table>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+
+											<tr>
+												<td style="text-align: center; vertical-align: middle;"><a
+													href="grade_student.jsp">이름</a></td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">2</td>
+												<td style="text-align: center; vertical-align: middle;">3</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+
+										</tbody>
+
+										<tfoot>
+											<tr>
+												<td style="text-align: center; vertical-align: middle;">평균</td>
+												<td style="text-align: center; vertical-align: middle;">10</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">10</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+												<td style="text-align: center; vertical-align: middle;">6</td>
+												<td style="text-align: center; vertical-align: middle;">9</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">8</td>
+												<td style="text-align: center; vertical-align: middle;">5</td>
+												<td style="text-align: center; vertical-align: middle;">7</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -224,7 +233,8 @@
 	<script src="${contextPath}/assets/js/easypiechart.js"></script>
 	<script src="${contextPath}/assets/js/easypiechart-data.js"></script>
 
-	<script src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	<script
+		src="${contextPath}/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 	<!-- Custom Js -->
 	<script src="${contextPath}/assets/js/custom-scripts.js"></script>
 </body>
