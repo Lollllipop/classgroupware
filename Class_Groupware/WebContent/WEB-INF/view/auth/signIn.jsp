@@ -64,12 +64,18 @@
                         <strong>비밀번호</strong>
                         <input type="password" class="form-control" placeholder="비밀번호를 입력하세요">
                     </div>
-                    <button type="submit" class="btn">로그인</button>
+                    <div class="form-check mb-2 mr-sm-2">
+				    	<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+				    	<label class="form-check-label" for="inlineFormCheck">
+				      	Remember me
+				    	</label>
+				  	</div>
+                    <button type="submit" class="btn btn-primary mb-2">로그인</button>
                     <div class="clear"></div>
                     <hr>
                     <small class="form-text text-muted">아이디 또는 비밀번호를 잊으셨습니까?</small>
                     <div class="clear"></div>
-                    <a href="#" data-toggle="modal" data-target="#exampleModal" onclick="showPopup()">아이디 찾기</a> |
+                    <a href="#" data-toggle="modal" data-target="#exampleModal" onclick="showEmailPopup()">아이디 찾기</a> |
                     <a href="#" onclick="showIdPopup()">비밀번호 찾기</a>
                 </form>
             </div>
