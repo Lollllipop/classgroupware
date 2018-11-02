@@ -24,7 +24,7 @@ public class Hw_submitDAO {
 		try {
 			System.out.println("Hw_submitDAO.insertIntoHWBoard È£ÃâµÊ");
 			conn = DriverManager.getConnection(DB_DRIVER);
-			pstmt = conn.prepareStatement("INSERT INTO HW_BOARD VALUES(hw_board_seq.nextval,?,?,?,?,?,?,SYSDATE,?,?");
+			pstmt = conn.prepareStatement("INSERT INTO HW_SUBMIT VALUES(hw_board_seq.nextval,?,?,?,?,?,?,SYSDATE,?,?");
 			pstmt.setInt(1, hw_submit_idx);
 			pstmt.setInt(2, class_idx);
 			pstmt.setInt(3, user_idx);
@@ -48,16 +48,17 @@ public class Hw_submitDAO {
 
 	// ÇÐ»ý-°úÁ¦ ¼öÁ¤
 	public void update(String hw_submit_content, Date hw_submit_content_writedate,
-			String hw_submit_file_name, String hw_submit_file_link) {
+			String hw_submit_file_name, String hw_submit_file_link,int hw_submit_idx) {
 		try {
 			System.out.println("Hw_submitDAO.UpdateHWBoardContents È£ÃâµÊ");
 			conn = DriverManager.getConnection(DB_DRIVER);
 			pstmt = conn.prepareStatement(
-					"UPDATE HW_BOARD SET hw_title=?,hw_content=?,hw_startdate=?,hw_enddate=?,hw_file_link=?,hw_file_name=? WHERE hw_idx=?");
+					"UPDATE HW_SUBMIT SET hw_submit_content=?, hw_submit_content_writedate=?, hw_submit_file_name=?,hw_file_link=?, hw_submit_file_link=? WHERE hw_submit_idx=?");
 			pstmt.setString(1, hw_submit_content);
 			pstmt.setDate(2, hw_submit_content_writedate);
 			pstmt.setString(3, hw_submit_file_name);
 			pstmt.setString(4, hw_submit_file_link);
+			pstmt.setInt(5, hw_submit_idx);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -80,7 +81,7 @@ public class Hw_submitDAO {
 		try {
 			System.out.println("Hw_submitDAO.UpdateHWBoardContents È£ÃâµÊ");
 			conn = DriverManager.getConnection(DB_DRIVER);
-			pstmt = conn.prepareStatement("DELETE FROM HW_SUBMIT_BOARD WHERE hw_submit_idx=?");
+			pstmt = conn.prepareStatement("DELETE FROM HW_SUBMIT WHERE hw_submit_idx=?");
 			pstmt.setString(1, hw_submit_idx);
 		} catch (Exception e) {
 			e.printStackTrace();

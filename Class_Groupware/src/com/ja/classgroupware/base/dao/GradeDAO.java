@@ -20,7 +20,7 @@ public class GradeDAO {
 		try {
 			System.out.println("GradeDAO.insert »£√‚µ ");
 			conn = DriverManager.getConnection(DB_DRIVER);
-			pstmt = conn.prepareStatement("INSERT INTO HW_BOARD VALUES(hw_board_seq.nextval,?,?,?,?");
+			pstmt = conn.prepareStatement("INSERT INTO GRADE VALUES(grade_seq.nextval,?,?,?,?");
 			pstmt.setInt(1, class_idx);
 			pstmt.setInt(2, user_idx);
 			pstmt.setString(3, grade_name);
@@ -73,7 +73,7 @@ public class GradeDAO {
 		try {
 			System.out.println("GradeDAO.selectAllGrade »£√‚µ ");
 			conn = DriverManager.getConnection(DB_DRIVER);
-			pstmt = conn.prepareStatement("SELECT * FROM GRADE ORDER BY hw_idx DESC");
+			pstmt = conn.prepareStatement("SELECT * FROM GRADE ORDER BY grade_idx DESC");
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -100,5 +100,7 @@ public class GradeDAO {
 		}
 		return list;
 	}
+	
+	
 
 }
