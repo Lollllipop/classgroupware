@@ -1,92 +1,195 @@
 package com.ja.classgroupware.base.dao;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.ja.classgroupware.base.dto.Hw_submitDTO;
+
 public class Hw_submitDAO {
 
-	private String hw_submit_idx;
-	private String hw_idx;
-	private String class_idx;
-	private String user_idx;
-	private String hw_submit_content;
-	private String hw_submit_content_writedate;
-	private String hw_submit_file_name;
-	private String hw_submit_file_link;
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 
-	public Hw_submitDAO(String hw_submit_idx, String hw_idx, String class_idx, String user_idx,
-			String hw_submit_content, String hw_submit_content_writedate, String hw_submit_file_name,
-			String hw_submit_file_link) {
-		super();
-		this.hw_submit_idx = hw_submit_idx;
-		this.hw_idx = hw_idx;
-		this.class_idx = class_idx;
-		this.user_idx = user_idx;
-		this.hw_submit_content = hw_submit_content;
-		this.hw_submit_content_writedate = hw_submit_content_writedate;
-		this.hw_submit_file_name = hw_submit_file_name;
-		this.hw_submit_file_link = hw_submit_file_link;
+	public static final String DB_DRIVER = "jdbc:apache:commons:dbcp:oracleDBCP";
+
+	// 학생-과제 제출
+	public void insert(int hw_submit_idx, int class_idx, int user_idx,
+			String hw_bo_submit_content, Date hw_bo_submit_cont_writedate) {
+
+		try {
+			System.out.println("Hw_submitDAO.insertIntoHWBoard 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("INSERT INTO HW_BOARD VALUES(hw_board_seq.nextval,?,?,?,?,?,?,SYSDATE,?,?");
+			pstmt.setInt(1, hw_submit_idx);
+			pstmt.setInt(2, class_idx);
+			pstmt.setInt(3, user_idx);
+			pstmt.setString(4, hw_bo_submit_content);
+			pstmt.setDate(5, hw_bo_submit_cont_writedate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public String getHw_submit_idx() {
-		return hw_submit_idx;
+	// 학생-과제 수정
+	public void update(String hw_submit_content, Date hw_submit_content_writedate,
+			String hw_submit_file_name, String hw_submit_file_link) {
+		try {
+			System.out.println("Hw_submitDAO.UpdateHWBoardContents 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement(
+					"UPDATE HW_BOARD SET hw_title=?,hw_content=?,hw_startdate=?,hw_enddate=?,hw_file_link=?,hw_file_name=? WHERE hw_idx=?");
+			pstmt.setString(1, hw_submit_content);
+			pstmt.setDate(2, hw_submit_content_writedate);
+			pstmt.setString(3, hw_submit_file_name);
+			pstmt.setString(4, hw_submit_file_link);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public void setHw_submit_idx(String hw_submit_idx) {
-		this.hw_submit_idx = hw_submit_idx;
+	// 학생-과제 삭제
+	public void delete(String hw_submit_idx) {
+		try {
+			System.out.println("Hw_submitDAO.UpdateHWBoardContents 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("DELETE FROM HW_SUBMIT_BOARD WHERE hw_submit_idx=?");
+			pstmt.setString(1, hw_submit_idx);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public String getHw_idx() {
-		return hw_idx;
+	// 학생이 자신이 제출한 과제만 볼수있게 하는 로직(과제게시판-리플형식 제출부분)
+	public ArrayList<Hw_submitDTO> selectByIdx(int user_idx) {
+		ArrayList<Hw_submitDTO> list = new ArrayList<Hw_submitDTO>();
+		try {
+			System.out.println("Hw_submitDAO.selectSubmitHWBoardByMyIdx 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT * FROM HW_SUBMIT WHERE user_idx=?");
+			pstmt.setInt(1, user_idx);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				Hw_submitDTO data = new Hw_submitDTO(rs.getInt("hw_submit_idx"), rs.getInt("hw_idx"),
+						rs.getInt("class_idx"), rs.getInt("user_idx"), rs.getString("hw_submit_content"),
+						rs.getDate("hw_submit_content_writedate"), rs.getString("hw_submit_file_name"),
+						rs.getString("hw_submit_file_link"));
+				list.add(data);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
 	}
 
-	public void setHw_idx(String hw_idx) {
-		this.hw_idx = hw_idx;
-	}
+	// 강사-학생이 제출한 모든 과제를 볼 수 있는 부분(과제게시판-리플형식 제출부분)
+	public ArrayList<Hw_submitDTO> selectAllContent() {
+		ArrayList<Hw_submitDTO> list = new ArrayList<Hw_submitDTO>();
+		try {
+			System.out.println("Hw_submitDAO.selectSubmitHWBoardByMyIdx 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT * FROM HW_SUBMIT");
+			rs = pstmt.executeQuery();
 
-	public String getClass_idx() {
-		return class_idx;
+			while (rs.next()) {
+				Hw_submitDTO data = new Hw_submitDTO(rs.getInt("hw_submit_idx"), rs.getInt("hw_idx"),
+						rs.getInt("class_idx"), rs.getInt("user_idx"), rs.getString("hw_submit_content"),
+						rs.getDate("hw_submit_content_writedate"), rs.getString("hw_submit_file_name"),
+						rs.getString("hw_submit_file_link"));
+				list.add(data);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
 	}
-
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
+	
+	public void countAll() {
+		try {
+			System.out.println("Hw_submitDAO.countAll 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM HW_SUBMIT");
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
-
-	public String getUser_idx() {
-		return user_idx;
-	}
-
-	public void setUser_idx(String user_idx) {
-		this.user_idx = user_idx;
-	}
-
-	public String getHw_submit_content() {
-		return hw_submit_content;
-	}
-
-	public void setHw_submit_content(String hw_submit_content) {
-		this.hw_submit_content = hw_submit_content;
-	}
-
-	public String getHw_submit_content_writedate() {
-		return hw_submit_content_writedate;
-	}
-
-	public void setHw_submit_content_writedate(String hw_submit_content_writedate) {
-		this.hw_submit_content_writedate = hw_submit_content_writedate;
-	}
-
-	public String getHw_submit_file_name() {
-		return hw_submit_file_name;
-	}
-
-	public void setHw_submit_file_name(String hw_submit_file_name) {
-		this.hw_submit_file_name = hw_submit_file_name;
-	}
-
-	public String getHw_submit_file_link() {
-		return hw_submit_file_link;
-	}
-
-	public void setHw_submit_file_link(String hw_submit_file_link) {
-		this.hw_submit_file_link = hw_submit_file_link;
-	}
-
 }

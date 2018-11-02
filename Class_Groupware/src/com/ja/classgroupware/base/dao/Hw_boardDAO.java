@@ -1,111 +1,179 @@
 package com.ja.classgroupware.base.dao;
 
+import com.ja.classgroupware.base.listener.DBCPInitListener;
+import com.ja.classgroupware.base.dto.Hw_boardDTO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.sql.Date;
+
 public class Hw_boardDAO {
 
-	private String hw_idx;
-	private String class_idx;
-	private String user_idx;
-	private String hw_title;
-	private String hw_content;
-	private String hw_startdate;
-	private String hw_enddate;
-	private String hw_writedate;
-	private String hw_file_link;
-	private String hw_file_name;
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 
-	public Hw_boardDAO(String hw_idx, String class_idx, String user_idx, String hw_title, String hw_content,
-			String hw_startdate, String hw_enddate, String hw_writedate, String hw_file_link, String hw_file_name) {
-		super();
-		this.hw_idx = hw_idx;
-		this.class_idx = class_idx;
-		this.user_idx = user_idx;
-		this.hw_title = hw_title;
-		this.hw_content = hw_content;
-		this.hw_startdate = hw_startdate;
-		this.hw_enddate = hw_enddate;
-		this.hw_writedate = hw_writedate;
-		this.hw_file_link = hw_file_link;
-		this.hw_file_name = hw_file_name;
+	public static final String DB_DRIVER = "jdbc:apache:commons:dbcp:oracleDBCP";
+
+	public void insertAlert() {
+
 	}
 
-	public String getHw_idx() {
-		return hw_idx;
+	// 강사 - 글쓰기
+	public void insert(int class_idx, int user_idx, String hw_title, String hw_content,
+			Date hw_startdate, Date hw_enddate, Date hw_writedate, String hw_file_link, String hw_file_name) {
+
+		try {
+			System.out.println("Hw_boardDAO.insert 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("INSERT INTO HW_BOARD VALUES(hw_board_seq.nextval,?,?,?,?,?,?,SYSDATE,?,?");
+			pstmt.setInt(1, class_idx);
+			pstmt.setInt(2, user_idx);
+			pstmt.setString(3, hw_title);
+			pstmt.setString(4, hw_content);
+			pstmt.setDate(5, hw_startdate);
+			pstmt.setDate(6, hw_enddate);
+			pstmt.setString(7, hw_file_link);
+			pstmt.setString(8, hw_file_name);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public void setHw_idx(String hw_idx) {
-		this.hw_idx = hw_idx;
+	// 강사 - 글 수정
+	public void update(String hw_title, String hw_content, Date hw_startdate, Date hw_enddate,
+			String hw_file_link, String hw_file_name, int hw_idx) {
+
+		try {
+			System.out.println("Hw_boardDAO.update 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement(
+					"UPDATE HW_BOARD SET hw_title=?,hw_content=?,hw_startdate=?,hw_enddate=?,hw_file_link=?,hw_file_name=? WHERE hw_idx=?");
+			pstmt.setString(1, hw_title);
+			pstmt.setString(2, hw_content);
+			pstmt.setDate(3, hw_startdate);
+			pstmt.setDate(4, hw_enddate);
+			pstmt.setString(5, hw_file_link);
+			pstmt.setString(6, hw_file_name);
+			pstmt.setInt(7, hw_idx);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public String getClass_idx() {
-		return class_idx;
+	// 강사 - 글 삭제
+	public void delete(int hw_idx) {
+		try {
+			System.out.println("Hw_boardDAO.delete 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("DELETE FROM HW_BOARD WHERE hw_idx=?");
+			pstmt.setInt(1, hw_idx);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
+	// 과제 게시판 리스트를 보여주는 로직
+	public ArrayList<Hw_boardDTO> selectAllContent() {
+		ArrayList<Hw_boardDTO> list = new ArrayList<Hw_boardDTO>();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			System.out.println("HWBoardDAO.selectAllContent 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT * FROM HW_BOARD ORDER BY hw_idx DESC");
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Hw_boardDTO data = new Hw_boardDTO(rs.getInt("hw_idx"), rs.getInt("class_idx"),
+						rs.getInt("user_idx"), rs.getString("hw_title"), rs.getString("hw_content"),
+						rs.getDate("hw_startdate"), rs.getDate("hw_enddate"), rs.getDate("hw_writedate"),
+						rs.getString("hw_file_link"), rs.getString("hw_file_name"));
+				list.add(data);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return list;
 	}
 
-	public String getUser_idx() {
-		return user_idx;
-	}
-
-	public void setUser_idx(String user_idx) {
-		this.user_idx = user_idx;
-	}
-
-	public String getHw_title() {
-		return hw_title;
-	}
-
-	public void setHw_title(String hw_title) {
-		this.hw_title = hw_title;
-	}
-
-	public String getHw_content() {
-		return hw_content;
-	}
-
-	public void setHw_content(String hw_content) {
-		this.hw_content = hw_content;
-	}
-
-	public String getHw_startdate() {
-		return hw_startdate;
-	}
-
-	public void setHw_startdate(String hw_startdate) {
-		this.hw_startdate = hw_startdate;
-	}
-
-	public String getHw_enddate() {
-		return hw_enddate;
-	}
-
-	public void setHw_enddate(String hw_enddate) {
-		this.hw_enddate = hw_enddate;
-	}
-
-	public String getHw_writedate() {
-		return hw_writedate;
-	}
-
-	public void setHw_writedate(String hw_writedate) {
-		this.hw_writedate = hw_writedate;
-	}
-
-	public String getHw_file_link() {
-		return hw_file_link;
-	}
-
-	public void setHw_file_link(String hw_file_link) {
-		this.hw_file_link = hw_file_link;
-	}
-
-	public String getHw_file_name() {
-		return hw_file_name;
-	}
-
-	public void setHw_file_name(String hw_file_name) {
-		this.hw_file_name = hw_file_name;
+	// 과제게시판 총 갯수
+	public void countAll() {
+		try {
+			System.out.println("Hw_boardDAO.countAll 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM HW_BOARD");
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

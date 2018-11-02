@@ -1,60 +1,104 @@
 package com.ja.classgroupware.base.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.ja.classgroupware.base.dto.GradeDTO;
+
 public class GradeDAO {
 
-	private String grade_idx;
-	private String class_idx;
-	private String user_idx;
-	private String grade_name;
-	private String grade_score;
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 
-	public GradeDAO(String grade_idx, String class_idx, String user_idx, String grade_name, String grade_score) {
-		super();
-		this.grade_idx = grade_idx;
-		this.class_idx = class_idx;
-		this.user_idx = user_idx;
-		this.grade_name = grade_name;
-		this.grade_score = grade_score;
+	public static final String DB_DRIVER = "jdbc:apache:commons:dbcp:oracleDBCP";
+
+	public void insert(int class_idx, int user_idx, String grade_name, int grade_score) {
+		try {
+			System.out.println("GradeDAO.insert 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("INSERT INTO HW_BOARD VALUES(hw_board_seq.nextval,?,?,?,?");
+			pstmt.setInt(1, class_idx);
+			pstmt.setInt(2, user_idx);
+			pstmt.setString(3, grade_name);
+			pstmt.setInt(4, grade_score);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public String getGrade_idx() {
-		return grade_idx;
+	// class는 고정 값인지? 반을 잘못 입력 할 가능성 o? x? , grade_name도 고정값인지? 무조건 과제명을 클릭해서 변경 할 수
+	// 있는지 ?
+	// idx로 식별할것인지 grade_name+user_name을 합쳐서 식별할것인지..
+	public void update(int grade_score, int grade_idx) {
+		try {
+			System.out.println("GradeDAO.update 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("UPDATE GRADE SET grade_score=? WHERE grade_idx=?");
+			pstmt.setInt(1, grade_score);
+			pstmt.setInt(2, grade_idx);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public void setGrade_idx(String grade_idx) {
-		this.grade_idx = grade_idx;
-	}
+	public ArrayList<GradeDTO> selectAllGrade() {
+		ArrayList<GradeDTO> list = new ArrayList<GradeDTO>();
 
-	public String getClass_idx() {
-		return class_idx;
-	}
+		try {
+			System.out.println("GradeDAO.selectAllGrade 호출됨");
+			conn = DriverManager.getConnection(DB_DRIVER);
+			pstmt = conn.prepareStatement("SELECT * FROM GRADE ORDER BY hw_idx DESC");
+			rs = pstmt.executeQuery();
 
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
-	}
-
-	public String getUser_idx() {
-		return user_idx;
-	}
-
-	public void setUser_idx(String user_idx) {
-		this.user_idx = user_idx;
-	}
-
-	public String getGrade_name() {
-		return grade_name;
-	}
-
-	public void setGrade_name(String grade_name) {
-		this.grade_name = grade_name;
-	}
-
-	public String getGrade_score() {
-		return grade_score;
-	}
-
-	public void setGrade_score(String grade_score) {
-		this.grade_score = grade_score;
+			while (rs.next()) {
+				GradeDTO data = new GradeDTO(rs.getInt("grade_idx"), rs.getInt("class_idx"), rs.getInt("user_idx"),
+						rs.getString("grade_name"), rs.getInt("grade_score"));
+				list.add(data);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
 	}
 
 }
