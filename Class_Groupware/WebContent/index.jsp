@@ -107,9 +107,9 @@ body {
 
 
 
-		<a href="#"><img src="${contextPath}/assets/main/img/login.jpg" alt="..."
+		<a href="./login.do"><img src="${contextPath}/assets/main/img/login.jpg" alt="..."
 			class="img-responsive center-block" onclick="showPopup();"></a> <br> <br> <a
-			href="#"><img src="${contextPath}/assets/main/img/joinmember.jpg" alt="..."
+			href="./joinmember.do"><img src="${contextPath}/assets/main/img/joinmember.jpg" alt="..."
 			class="img-responsive center-block"></a> <br> <br> <br>
 		<div class="img_box" style="width: 330px; margin: auto;">
 			<a href="#"><img src="${contextPath}/assets/main/img/kakao.png" width="100"
