@@ -1,91 +1,134 @@
 package com.ja.classgroupware.base.dao;
 
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
+import com.ja.classgroupware.base.dto.*;
+import com.ja.classgroupware.base.listener.DBCPInitListener;
+
 public class CommentsDAO {
 
-	private String comment_idx;
-	private String bo_idx;
-	private String class_idx;
-	private String user_idx;
-	private String comm_parent_idx;
-	private String comm_content;
-	private String comm_writedate;
-	private String comm_role;
+	private static final String CONNECTION_URL = DBCPInitListener.getConnectionUrl();
 
-	public CommentsDAO(String comment_idx, String bo_idx, String class_idx, String user_idx, String comm_parent_idx,
-			String comm_content, String comm_writedate, String comm_role) {
-		super();
-		this.comment_idx = comment_idx;
-		this.bo_idx = bo_idx;
-		this.class_idx = class_idx;
-		this.user_idx = user_idx;
-		this.comm_parent_idx = comm_parent_idx;
-		this.comm_content = comm_content;
-		this.comm_writedate = comm_writedate;
-		this.comm_role = comm_role;
-	}
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 
-	public String getComment_idx() {
-		return comment_idx;
-	}
+	public void insert(int bo_idx, int class_idx, int user_idx, int comm_parent_idx,
+			String comm_content, Date comm_writedate, String comm_role) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("INSERT INTO comments VALUES(comments_seq.nextval,?,?,?,?,?,?,?)");
+			pstmt.setInt(1, bo_idx);
+			pstmt.setInt(2, class_idx);
+			pstmt.setInt(3, user_idx);
+			pstmt.setInt(4, comm_parent_idx);
+			pstmt.setString(5, comm_content);
+			pstmt.setDate(6, comm_writedate);
+			pstmt.setString(7, comm_role);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}//insert()
 
-	public void setComment_idx(String comment_idx) {
-		this.comment_idx = comment_idx;
-	}
+	public ArrayList<CommentsDTO> selectAll() {
+		ArrayList<CommentsDTO> list = new ArrayList<CommentsDTO>();
 
-	public String getBo_idx() {
-		return bo_idx;
-	}
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM comments ORDER BY comment_idx DESC");
+			rs = pstmt.executeQuery();
 
-	public void setBo_idx(String bo_idx) {
-		this.bo_idx = bo_idx;
-	}
+			// 데이터 구성 로직
+			while (rs.next()) {
+				CommentsDTO data = new CommentsDTO(rs.getInt("comment_idx"),rs.getInt("bo_idx"),rs.getInt("class_idx"),rs.getInt("user_idx"),
+						rs.getInt("comm_parent_idx"),rs.getString("comm_content"), rs.getDate("comm_writedate"), rs.getString("comm_role"));
+				list.add(data);
+			}
 
-	public String getClass_idx() {
-		return class_idx;
-	}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
-	}
+		return list;
+	}//selectAll()
 
-	public String getUser_idx() {
-		return user_idx;
-	}
+	public CommentsDTO selectByIdx(int comment_idx) {
+		CommentsDTO data = null;
 
-	public void setUser_idx(String user_idx) {
-		this.user_idx = user_idx;
-	}
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM comments WHERE comment_idx=?");
+			pstmt.setInt(1, comment_idx);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				data = new CommentsDTO(rs.getInt("comment_idx"),rs.getInt("bo_idx"),rs.getInt("class_idx"),rs.getInt("user_idx"),
+						rs.getInt("comm_parent_idx"),rs.getString("comm_content"), rs.getDate("comm_writedate"), rs.getString("comm_role"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return data;
+	}//selectByIdx()
 
-	public String getComm_parent_idx() {
-		return comm_parent_idx;
-	}
+	public void update(int comment_idx, String comm_content) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("UPDATE comments SET comm_content=? WHERE comment_idx=?");
+			pstmt.setString(1, comm_content);
+			pstmt.setInt(2, comment_idx);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}//update()
 
-	public void setComm_parent_idx(String comm_parent_idx) {
-		this.comm_parent_idx = comm_parent_idx;
-	}
-
-	public String getComm_content() {
-		return comm_content;
-	}
-
-	public void setComm_content(String comm_content) {
-		this.comm_content = comm_content;
-	}
-
-	public String getComm_writedate() {
-		return comm_writedate;
-	}
-
-	public void setComm_writedate(String comm_writedate) {
-		this.comm_writedate = comm_writedate;
-	}
-
-	public String getComm_role() {
-		return comm_role;
-	}
-
-	public void setComm_role(String comm_role) {
-		this.comm_role = comm_role;
-	}
+	public void delete(int comment_idx) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("DELETE FROM comments WHERE comment_idx=?");
+			pstmt.setInt(1, comment_idx);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}//delete()
 
 }

@@ -1,61 +1,135 @@
 package com.ja.classgroupware.base.dao;
 
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
+import com.ja.classgroupware.base.dto.*;
+import com.ja.classgroupware.base.listener.DBCPInitListener;
+
 public class ClassDAO {
 
-	private String class_idx;
-	private String class_name;
-	private String class_about;
-	private String class_startdate;
-	private String class_enddate;
+	private static final String CONNECTION_URL = DBCPInitListener.getConnectionUrl();
 
-	public ClassDAO(String class_idx, String class_name, String class_about, String class_startdate,
-			String class_enddate) {
-		super();
-		this.class_idx = class_idx;
-		this.class_name = class_name;
-		this.class_about = class_about;
-		this.class_startdate = class_startdate;
-		this.class_enddate = class_enddate;
-	}
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 
-	public String getClass_idx() {
-		return class_idx;
-	}
+	public void insert(String class_name, String class_about, Date class_startdate, Date class_enddate) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("INSERT INTO class VALUES(class_seq.nextval,?,?,?,?)");
+			pstmt.setString(1, class_name);
+			pstmt.setString(2, class_about);
+			pstmt.setDate(3, class_startdate);
+			pstmt.setDate(4, class_enddate);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}// insert()
 
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
-	}
+	public ArrayList<ClassDTO> selectAll() {
 
-	public String getClass_name() {
-		return class_name;
-	}
+		ArrayList<ClassDTO> list = new ArrayList<ClassDTO>();
 
-	public void setClass_name(String class_name) {
-		this.class_name = class_name;
-	}
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM class ORDER BY class_idx DESC");
+			rs = pstmt.executeQuery();
 
-	public String getClass_about() {
-		return class_about;
-	}
+			// 데이터 구성 로직
+			while (rs.next()) {
+				ClassDTO data = new ClassDTO(rs.getInt("class_idx"), rs.getString("class_name"),
+						rs.getString("class_about"), rs.getDate("class_startdate"), rs.getDate("class_enddate"));
+				list.add(data);
+			}
 
-	public void setClass_about(String class_about) {
-		this.class_about = class_about;
-	}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
-	public String getClass_startdate() {
-		return class_startdate;
-	}
+		return list;
+	}// selectAll()
 
-	public void setClass_startdate(String class_startdate) {
-		this.class_startdate = class_startdate;
-	}
+	public ClassDTO selectByIdx(int class_idx) {
+		ClassDTO data = null;
 
-	public String getClass_enddate() {
-		return class_enddate;
-	}
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM class WHERE class_idx=?");
+			pstmt.setInt(1, class_idx);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				data = new ClassDTO(rs.getInt("class_idx"), rs.getString("class_name"), rs.getString("class_about"),
+						rs.getDate("class_startdate"), rs.getDate("class_enddate"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return data;
+	}// selectByIdx()
 
-	public void setClass_enddate(String class_enddate) {
-		this.class_enddate = class_enddate;
-	}
+	public void update(int class_idx, String class_name, String class_about, Date class_startdate, Date class_enddate) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("UPDATE class SET class_name=?, class_about=?, class_startdate=?, class_enddate=? WHERE class_idx=?");
+			pstmt.setString(1, class_name);
+			pstmt.setString(2, class_about);
+			pstmt.setDate(3, class_startdate);
+			pstmt.setDate(4, class_enddate);
+			pstmt.setInt(5, class_idx);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}// update()
+
+	public void delete(int class_idx) {
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("DELETE FROM class WHERE class_idx=?");
+			pstmt.setInt(1, class_idx);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}// delete()
 
 }
