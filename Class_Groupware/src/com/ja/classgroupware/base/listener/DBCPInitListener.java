@@ -18,13 +18,13 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 public class DBCPInitListener implements ServletContextListener {
 	
-	private String connectionUrl = null;
+	private static String connectionUrl = null;
 	
     private void setConnectionUrl(String connectionUrl) {
-    	this.connectionUrl = connectionUrl;
+    	DBCPInitListener.connectionUrl = connectionUrl;
     }
     
-    public String getConnectionUrl() {
+    public static String getConnectionUrl() {
     	return connectionUrl;
     }
 	
