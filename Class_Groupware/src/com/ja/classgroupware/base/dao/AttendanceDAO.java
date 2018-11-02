@@ -1,61 +1,179 @@
 package com.ja.classgroupware.base.dao;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.ja.classgroupware.base.dto.AttendanceDTO;
+import com.ja.classgroupware.base.listener.DBCPInitListener;
+
 public class AttendanceDAO {
 
-	private String attendace_idx;
-	private String class_idx;
-	private String user_idx;
-	private String attendace_event;
-	private String attendace_date;
+	private static final String CONNECTION_URL = DBCPInitListener.getConnectionUrl();
 
-	public AttendanceDAO(String attendace_idx, String class_idx, String user_idx, String attendace_event,
-			String attendace_date) {
-		super();
-		this.attendace_idx = attendace_idx;
-		this.class_idx = class_idx;
-		this.user_idx = user_idx;
-		this.attendace_event = attendace_event;
-		this.attendace_date = attendace_date;
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
+
+	public void insert(int attendace_idx, int class_idx, int user_idx, String attendace_event, Date attendace_date) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("INSERT INTO ATTENDANCE VALUES(SEQ_CONTENT_IDX.NEXTVAL, ?, ?, ?, ?)");
+
+			pstmt.setInt(1, class_idx);
+			pstmt.setInt(2, user_idx);
+			pstmt.setString(3, attendace_event);
+			pstmt.setDate(4, attendace_date);
+
+			pstmt.executeUpdate();
+
+			conn.commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
-	public String getAttendace_idx() {
-		return attendace_idx;
-	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public ArrayList<AttendanceDTO> selectAll() {
 
-	public void setAttendace_idx(String attendace_idx) {
-		this.attendace_idx = attendace_idx;
-	}
+		ArrayList<AttendanceDTO> list = new ArrayList<AttendanceDTO>();
 
-	public String getClass_idx() {
-		return class_idx;
-	}
+		AttendanceDTO data = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-	public void setClass_idx(String class_idx) {
-		this.class_idx = class_idx;
-	}
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM ATTENDANCE ORDER BY attendance_idx DESC");
 
-	public String getUser_idx() {
-		return user_idx;
-	}
+			rs = pstmt.executeQuery();
 
-	public void setUser_idx(String user_idx) {
-		this.user_idx = user_idx;
-	}
+			while (rs.next()) {
+				data = new AttendanceDTO(rs.getInt("attendance_idx"), rs.getInt("class_idx"), rs.getInt("user_idx"),
+						rs.getString("attendance_event"), rs.getDate("attendance_date"));
+				list.add(data);
+			}
 
-	public String getAttendace_event() {
-		return attendace_event;
-	}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
-	public void setAttendace_event(String attendace_event) {
-		this.attendace_event = attendace_event;
-	}
+		return list;
 
-	public String getAttendace_date() {
-		return attendace_date;
 	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void setAttendace_date(String attendace_date) {
-		this.attendace_date = attendace_date;
+	public AttendanceDTO selectByIdx(int attendance_idx) {
+
+		AttendanceDTO data = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("SELECT * FROM ATTENDANCE WHERE attendance_idx = ?");
+
+			pstmt.setInt(1, attendance_idx);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				data = new AttendanceDTO(rs.getInt("attendance_idx"), rs.getInt("class_idx"), rs.getInt("user_idx"),
+						rs.getString("attendance_event"), rs.getDate("attendance_date "));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return data;
 	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	public void update(int attendance_idx, String attendance_event) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("UPDATE ATTENDANCE SET attendance_event = ? WHERE attendance_idx = ?");
+
+			pstmt.setString(1, attendance_event);
+			pstmt.setInt(2, attendance_idx);
+
+			pstmt.executeUpdate();
+
+			conn.commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public void delete(int attendance_idx) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:oracleDBCP");
+			pstmt = conn.prepareStatement("DELETE FROM ATTENDANCE WHERE attendance_idx = ?");
+
+			pstmt.setInt(1, attendance_idx);
+
+			pstmt.executeUpdate();
+
+			conn.commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
